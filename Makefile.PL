@@ -1,0 +1,148 @@
+
+use strict;
+use warnings;
+
+BEGIN { require 5.008; }
+
+use ExtUtils::MakeMaker 6.31;
+
+use File::ShareDir::Install;
+install_share dist => "share";
+install_share module => "Dist::Zilla::MintingProfile::Author::LESPEA", "share\/profiles";
+
+
+my %WriteMakefileArgs = (
+  'ABSTRACT' => 'LESPEA\'s Dist::Zilla Configuration',
+  'AUTHOR' => 'Adam Lesperance <lespea@gmail.com>',
+  'BUILD_REQUIRES' => {
+    'Dist::Zilla::Plugin::Bootstrap::lib' => '0',
+    'English' => '0',
+    'File::Find' => '0',
+    'File::Temp' => '0',
+    'ExtUtils::MakeMaker' => '6.31',
+    'Scalar::Util' => '0',
+    'Test::More' => '0.94',
+    'perl' => '5.004'
+  },
+  'CONFIGURE_REQUIRES' => {
+    'File::ShareDir::Install' => '0.03',
+    'ExtUtils::MakeMaker' => '6.31'
+  },
+  'DISTNAME' => 'Dist-Zilla-PluginBundle-Author-LESPEA',
+  'EXE_FILES' => [],
+  'LICENSE' => 'perl',
+  'NAME' => 'Dist::Zilla::PluginBundle::Author::LESPEA',
+  'PREREQ_PM' => {
+    'CPAN::Meta::YAML' => '0',
+    'Carp' => '0',
+    'Dist::Zilla::Plugin::ArchiveRelease' => '0',
+    'Dist::Zilla::Plugin::Authority' => '0',
+    'Dist::Zilla::Plugin::AutoMetaResources' => '0',
+    'Dist::Zilla::Plugin::AutoPrereqs' => '0',
+    'Dist::Zilla::Plugin::CPANChangesTests' => '0',
+    'Dist::Zilla::Plugin::CheckChangesTests' => '0',
+    'Dist::Zilla::Plugin::CompileTests' => '0',
+    'Dist::Zilla::Plugin::ConfirmRelease' => '0',
+    'Dist::Zilla::Plugin::ConsistentVersionTest' => '0',
+    'Dist::Zilla::Plugin::CopyFilesFromBuild' => '0',
+    'Dist::Zilla::Plugin::CriticTests' => '0',
+    'Dist::Zilla::Plugin::DistManifestTests' => '0',
+    'Dist::Zilla::Plugin::DualBuilders' => '0',
+    'Dist::Zilla::Plugin::EOLTests' => '0',
+    'Dist::Zilla::Plugin::ExecDir' => '0',
+    'Dist::Zilla::Plugin::ExtraTests' => '0',
+    'Dist::Zilla::Plugin::FakeRelease' => '0',
+    'Dist::Zilla::Plugin::GatherDir' => '0',
+    'Dist::Zilla::Plugin::HasVersionTests' => '0',
+    'Dist::Zilla::Plugin::InstallGuide' => '0',
+    'Dist::Zilla::Plugin::KwaliteeTests' => '0',
+    'Dist::Zilla::Plugin::License' => '0',
+    'Dist::Zilla::Plugin::MakeMaker' => '0',
+    'Dist::Zilla::Plugin::Manifest' => '0',
+    'Dist::Zilla::Plugin::ManifestSkip' => '0',
+    'Dist::Zilla::Plugin::MetaConfig' => '0',
+    'Dist::Zilla::Plugin::MetaJSON' => '0',
+    'Dist::Zilla::Plugin::MetaNoIndex' => '0',
+    'Dist::Zilla::Plugin::MetaTests' => '0',
+    'Dist::Zilla::Plugin::MetaYAML' => '0',
+    'Dist::Zilla::Plugin::MinimumPerl' => '0',
+    'Dist::Zilla::Plugin::MinimumVersionTests' => '0',
+    'Dist::Zilla::Plugin::ModuleBuild' => '0',
+    'Dist::Zilla::Plugin::NextRelease' => '0',
+    'Dist::Zilla::Plugin::NoTabsTests' => '0',
+    'Dist::Zilla::Plugin::PerlTidy' => '0',
+    'Dist::Zilla::Plugin::PkgVersion' => '0',
+    'Dist::Zilla::Plugin::PodCoverageTests' => '0',
+    'Dist::Zilla::Plugin::PodSyntaxTests' => '0',
+    'Dist::Zilla::Plugin::PodWeaver' => '0',
+    'Dist::Zilla::Plugin::PortabilityTests' => '0',
+    'Dist::Zilla::Plugin::PruneCruft' => '0',
+    'Dist::Zilla::Plugin::ReadmeAnyFromPod' => '0',
+    'Dist::Zilla::Plugin::ReportVersions::Tiny' => '0',
+    'Dist::Zilla::Plugin::ShareDir' => '0',
+    'Dist::Zilla::Plugin::SynopsisTests' => '0',
+    'Dist::Zilla::Plugin::TestRelease' => '0',
+    'Dist::Zilla::Plugin::UnusedVarsTests' => '0',
+    'Dist::Zilla::Plugin::UploadToCPAN' => '0',
+    'Dist::Zilla::Role::MintingProfile::ShareDir' => '0',
+    'Dist::Zilla::Role::PluginBundle::Easy' => '0',
+    'Module::Metadata' => '0',
+    'Moose' => '0',
+    'PPIx::Regexp' => '0',
+    'Perl::Critic::Bangs' => '0',
+    'Perl::Critic::Lax' => '0',
+    'Perl::Critic::Pulp' => '0',
+    'Perl::Critic::StricterSubs' => '0',
+    'Perl::Critic::Swift' => '0',
+    'Perl::Critic::Utils::PPIRegexp' => '0',
+    'Perl::MinimumVersion' => '0',
+    'Perl::OSType' => '0',
+    'Perl::PrereqScanner' => '0',
+    'Pod::Coverage::TrustPod' => '0',
+    'Pod::Elemental::Transformer::List' => '0',
+    'Pod::Spell' => '0',
+    'Pod::Weaver' => '3.101632',
+    'Pod::Weaver::Config::Assembler' => '0',
+    'Pod::Weaver::Section::Installation' => '0',
+    'Pod::Weaver::Section::SeeAlso' => '0',
+    'Pod::Weaver::Section::Support' => '0',
+    'Pod::Weaver::Section::WarrantyDisclaimer' => '0',
+    'String::Format' => '0',
+    'Test::CPAN::Meta' => '0',
+    'Test::CheckChanges' => '0',
+    'Test::EOL' => '0.8',
+    'Test::Perl::Critic' => '0',
+    'Test::Pod::Content' => '0',
+    'namespace::autoclean' => '0.12',
+    'utf8' => '0'
+  },
+  'VERSION' => '1.000000',
+  'test' => {
+    'TESTS' => 't/*.t'
+  }
+);
+
+
+unless ( eval { ExtUtils::MakeMaker->VERSION(6.56) } ) {
+  my $br = delete $WriteMakefileArgs{BUILD_REQUIRES};
+  my $pp = $WriteMakefileArgs{PREREQ_PM};
+  for my $mod ( keys %$br ) {
+    if ( exists $pp->{$mod} ) {
+      $pp->{$mod} = $br->{$mod} if $br->{$mod} > $pp->{$mod};
+    }
+    else {
+      $pp->{$mod} = $br->{$mod};
+    }
+  }
+}
+
+delete $WriteMakefileArgs{CONFIGURE_REQUIRES}
+  unless eval { ExtUtils::MakeMaker->VERSION(6.52) };
+
+WriteMakefile(%WriteMakefileArgs);
+
+package
+MY;
+use File::ShareDir::Install qw(postamble);
+
+

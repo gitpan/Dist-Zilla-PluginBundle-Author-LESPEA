@@ -1,0 +1,75 @@
+This file contains message digests of all files listed in MANIFEST,
+signed via the Module::Signature module, version 0.66.
+
+To verify the content in this distribution, first make sure you have
+Module::Signature installed, then type:
+
+    % cpansign -v
+
+It will check each file's integrity, as well as the signature's
+validity.  If "==> Signature verified OK! <==" is not displayed,
+the distribution may already have been compromised, and you should
+not run its Makefile.PL or Build.PL.
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+SHA1 458c42e39e61e6b8e4ebbf2d0c3da7512cac70e7 Build.PL
+SHA1 48963fe99e88e6bb3daafa2f2c5305668b8f60d4 Changes
+SHA1 684853a3f5f5f727714309c14c66d95479637f32 INSTALL
+SHA1 73d99deaae8f2a7f8068fbee8dbce318712aada2 LICENSE
+SHA1 f2e4ef4d2bf04025c4636a369073a3002a0d48f3 MANIFEST
+SHA1 8db655549433d2749d999eccbebcb2bcc3c3ba7a MANIFEST.SKIP
+SHA1 298ad4ed21e46586284f50ab959f0e28934b01e2 META.json
+SHA1 df681eda9f6156686c76dbbc1184933e45bf15e6 META.yml
+SHA1 d4935e1a697d0963a4e599825c14b4e62d3cd186 Makefile.PL
+SHA1 c348887b6555451207d7845d3b03ddcae17c949f README
+SHA1 fe70fa0ddf6a39fcc67f1d35de7b424d9efdade8 README.html
+SHA1 aea52352ab4cf07db2b63d33b3500d0890b126cc dist.ini
+SHA1 357281ee82a2e4d7258bb686e68abfb54beb0375 lib/Dist/Zilla/MintingProfile/Author/LESPEA.pm
+SHA1 e84675ee8782cafe6c3fd07c10f9cb70448dd9ce lib/Dist/Zilla/PluginBundle/Author/LESPEA.pm
+SHA1 9703940278507a1f46f9977c25965ddd2cde3694 lib/Pod/Weaver/PluginBundle/Author/LESPEA.pm
+SHA1 1d5ce1379af4a322d94f19f5843e23ebeb740366 perlcritic.rc
+SHA1 1a15f93f4edac88852309c08c4cbc7945232b0a5 share/profiles/default/Module.template
+SHA1 2a31bd777e27e076d0b8a546c9749e4a4cc233a2 share/profiles/default/profile.ini
+SHA1 a70ae04ccaab747a11514bc7878f224993314fac share/profiles/default/skel/.gitignore
+SHA1 6f11fa82a04fd996788ce0a21417de34595e935f share/profiles/default/skel/.perltidyrc
+SHA1 b541d92bd09963d577f425580a03109ce1f70b38 share/profiles/default/skel/Changes
+SHA1 50524a829eda2e56459b4e2ef9541b9ba9bb2583 share/profiles/default/skel/MANIFEST.SKIP
+SHA1 4b1e2621998bc58c2de9d01c94aef60849a20a37 share/profiles/default/skel/dist.ini
+SHA1 1d5ce1379af4a322d94f19f5843e23ebeb740366 share/profiles/default/skel/perlcritic.rc
+SHA1 cb40e2602bb4f2607808b26270456a7f51d1472a share/profiles/default/skel/weaver.ini
+SHA1 56da0605c8f7c75a40196f98ca52f325b09318e3 t/00-compile.t
+SHA1 ae1e6c7bf7b4388f8d4cf6ec53f576ae371e4c6d t/000-report-versions.t
+SHA1 fa45d6e6ab1cd421349dea4ef527bfd5cdc8a09e t/author-critic.t
+SHA1 6b823fd75631d47297112da5f145e1767a6fad0d t/release-check-changes.t
+SHA1 9b8a4e30abfc779f1082b5a2fbf250ca1853747c t/release-consistent-version.t
+SHA1 99fd7a50c65d07b8dcb369a7d2ea75860944ea1d t/release-cpan-changes.t
+SHA1 87768d177f8c2e2df9c591cde869e7c8a245555e t/release-dist-manifest.t
+SHA1 bf8570ef6888d79ca6a0c9e21b206b904b0775e2 t/release-distmeta.t
+SHA1 94334e0361920bbae970cfc1455e98a1a03626e6 t/release-eol.t
+SHA1 0068bf52fc88b39cc6509199f19a77890edb9bb0 t/release-has-version.t
+SHA1 961a1e2c92d836c8cad2d34b784cbc75345dec63 t/release-kwalitee.t
+SHA1 54ed25287b7e1c9ff328eaf126d438438c8a1d48 t/release-minimum-version.t
+SHA1 455d1dd1867212a665ad5ea4126b572411de300c t/release-no-tabs.t
+SHA1 a27fcc572066eee8c964952cd34eb857d9c71634 t/release-pod-coverage.t
+SHA1 b30cbdfaf935017c4568c0c91b242438cb87786e t/release-pod-syntax.t
+SHA1 d7221447937ab93002a123801def7be09748c106 t/release-unused-vars.t
+SHA1 cb40e2602bb4f2607808b26270456a7f51d1472a weaver.ini
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.11 (GNU/Linux)
+
+iQIcBAEBAgAGBQJNYFO+AAoJEM/nbidTjcrnOXMQANFiO3JZj+iedXoCk0XGUJeG
+nTvoBOYVlXqHMCDlGt/KjYP8tiNyZ+5Ka5IyyJe/+RtSjm1/aVz/ooZKpQYlFaZ1
+AjqStath+S9XzWShz0PzXMjuyFj2XEtxCAmhkVM92Y2Ew1iOBo6yKGcGlvZUZQEM
+CTKYRx0J9oiilj+WdgzGrHGdP6SdVvom8x/MvOebFPMwTRNQMYTEiN32S9BUEjbH
+n4M92bKhUkRa0lXjYOEv3BbGs18YEQymdBTSnpGMm8ZdP7MxLDeD0E14LEKm5hZ0
+LfHdWAPGSryMnD1lfQvugDFLubuQD1WV/9AXmej8WH2V7+9gvnVGuNIcN0iAMq59
+QxGuzFg1TcVeDFpxDlsdjh+FN+JQiiOtmf6PYhrHF0tTj5Sf/6ZuVTLGuI7m6R4d
+C2xN57f3I0RtzdIYIXxU/sWYFLtaa/k4yaeR6Jjb2uavaT85TyZB+s2/d3QE7V1E
+ogvpKBA4NU7xFrt8l41ZoSfeOIWQ8ioPRIcFr/NnAe2O0LQJ0lx0yQE5a7NLSHgN
+Bz4JY6/RYCrbOSje6k0/eduka4aJzYKVgsA3HR5GlwphBAkxzM/DNo3x6n7wPM/j
+2Hn2j5ZAgjTIa3pGHQsCld7voD4B/6m2KvthNSr617S84zm0Y1vwe2E25+lIbEjd
+CAkRrpHuLXxySvp3qI/D
+=kFSY
+-----END PGP SIGNATURE-----
