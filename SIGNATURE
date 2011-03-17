@@ -14,21 +14,21 @@ not run its Makefile.PL or Build.PL.
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA1
 
-SHA1 3f9b1d76cfc20e17d625d1ae8f72237c247b6006 Build.PL
-SHA1 15c34f0dc880eb1f4de2d34b42a26b483905be11 Changes
+SHA1 904ef2c489cd9cae4718fb27e50525500b602b9f Build.PL
+SHA1 645acbeb6ea2c4920a0ebe6ee5ef092368f23f58 Changes
 SHA1 684853a3f5f5f727714309c14c66d95479637f32 INSTALL
 SHA1 73d99deaae8f2a7f8068fbee8dbce318712aada2 LICENSE
-SHA1 915e3f104dd53d47d143bf3d6572340251bcf93b MANIFEST
+SHA1 190d397e538ead0702f21264c171f0d3de292e70 MANIFEST
 SHA1 8db655549433d2749d999eccbebcb2bcc3c3ba7a MANIFEST.SKIP
-SHA1 170dd950ce4c672205a082d759a58b86d181119f META.json
-SHA1 952138dad95cd4bc847205bbe09123751ea5d7e4 META.yml
-SHA1 c3ef202aa28ebbb598e7eda49ef65373654c1e20 Makefile.PL
-SHA1 1ba1f3ceaa2d020a931d768073347b8c1bcbdeec README
-SHA1 5f662c14855aa0db35e74adef34d837fd6efeaa3 README.html
-SHA1 a674530443b657a023b266bf62fae4d7afc3e748 dist.ini
-SHA1 0ae25aeb219b3f57d7b1fa071389b328f5835896 lib/Dist/Zilla/MintingProfile/Author/LESPEA.pm
-SHA1 1d5a04049ae5e7786f5f91b009612ce5929903b0 lib/Dist/Zilla/PluginBundle/Author/LESPEA.pm
-SHA1 6956a7b9067e251e9889cee4b1f6885e66b65ea9 lib/Pod/Weaver/PluginBundle/Author/LESPEA.pm
+SHA1 2b8f47b6285178d6c7649af80815980c63f4e5c1 META.json
+SHA1 68691d04ab8389e3582bd04ad14aaad94f9bfe60 META.yml
+SHA1 3bd6c7f9b4a03e1bd6b0d672d1a3fc37bbde8e29 Makefile.PL
+SHA1 5c47429acbd3d11a29e36b15ac6b4b01972f561c README
+SHA1 d8da39b167870bb55f13c4f69313ded6b17ecbca README.html
+SHA1 d3a717a1284b8fba7bad50b530c1058d75c29dbd dist.ini
+SHA1 b45b51d58729d183f019bee736ca78678edfdbd8 lib/Dist/Zilla/MintingProfile/Author/LESPEA.pm
+SHA1 f1571479aa87eaea8a91fdb5519db9395d5ed4dc lib/Dist/Zilla/PluginBundle/Author/LESPEA.pm
+SHA1 5617e10545b798849e8451d52c7b7eded1035001 lib/Pod/Weaver/PluginBundle/Author/LESPEA.pm
 SHA1 7a07f3833f33acc554b0003e338f3f57fd786337 perlcritic.rc
 SHA1 1a15f93f4edac88852309c08c4cbc7945232b0a5 share/profiles/default/Module.template
 SHA1 2a31bd777e27e076d0b8a546c9749e4a4cc233a2 share/profiles/default/profile.ini
@@ -40,8 +40,9 @@ SHA1 4b1e2621998bc58c2de9d01c94aef60849a20a37 share/profiles/default/skel/dist.i
 SHA1 7a07f3833f33acc554b0003e338f3f57fd786337 share/profiles/default/skel/perlcritic.rc
 SHA1 cb40e2602bb4f2607808b26270456a7f51d1472a share/profiles/default/skel/weaver.ini
 SHA1 9e65f3976c7c7eabaeab878d513ff95b38a07776 t/00-compile.t
-SHA1 b9f3438971d4cf73cde854f4dd01bc86444d579f t/000-report-versions-tiny.t
+SHA1 e98f7da2eadfdbc6d52bdf541b8d987fc106451e t/000-report-versions-tiny.t
 SHA1 fa45d6e6ab1cd421349dea4ef527bfd5cdc8a09e t/author-critic.t
+SHA1 3fec41c594fcd178191e6d8ae132357033b5b241 t/release-common_spelling.t
 SHA1 9c3627ff37f4fd5bddc34bf46cf3359eaf76a060 t/release-consistent-version.t
 SHA1 99fd7a50c65d07b8dcb369a7d2ea75860944ea1d t/release-cpan-changes.t
 SHA1 87768d177f8c2e2df9c591cde869e7c8a245555e t/release-dist-manifest.t
@@ -58,17 +59,17 @@ SHA1 cb40e2602bb4f2607808b26270456a7f51d1472a weaver.ini
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1.4.11 (GNU/Linux)
 
-iQIcBAEBAgAGBQJNgd5tAAoJEM/nbidTjcrngtUP+wZbms+9KWeE9q1qy0daYIC9
-KqTDYv5QK7mHV/hKpD90GIbKHZ2CZYdg2YlC7fb+fifgt8y4YU6Xnsg440TVIDT6
-3wz1KIlRnFxyBTOwSNslOxChLXqOrO0/iC6y+9S6aLr56VhebuB9tGCWJCP53UQn
-H0bCtAEnemeB/G7omqk6ytkYJ/yamP96wugA5zy0Q08BhASGw7PdRZ6KhEBa3mIo
-RVEiB5Rvt+t3UX9T3XHiFJBRgXGhLMw3/qB1Tfg5JUjwK+y0DzMY5fCGi6WJkTUt
-lNHiVrKg6RE+whGrJbee5j+nKHsbz8jCziL+y7CfbWy0CVRzaloGHNybC1gbZFnA
-KgKTB1IXUCmHVImGyJpFDhi/VkTVOXaC8VezAzZq5j+xLqjvPsnwehmvhkUzUVDu
-rKZumbgTGohEAxQb3pmb64Ap45lNJqD+uschxNuz7dLLl01INsIycP8llAGGjX23
-NBZ68N7Pq0bgwru6o66pZ/yexUPtkRXyEnxC7W02XR6CTn0vUi4F6DyF6Ht/ER2K
-Z4N4d0nMsZaJ0vgcdtP/0G3VekgRVESxmAx4iW/Sy/M+rmE/s2bduux0meakjo5v
-6vgtPMnu9THV7PsscP8PMYMjzflzktLWYRJ6+umLojDGzKFHRQVRqKKQernrZczW
-uHOK1dk8aw68dsnNB+DV
-=2c+I
+iQIcBAEBAgAGBQJNge03AAoJEM/nbidTjcrnFPUP/0anZ1/Ufn3PyntGR/gOuOqF
+IC2PkgxikIoenbgTJYFhq1e/hAyt1WOwdenhmneZKlfXWZVPwA6qQepzCxW8KFaa
+VU9RnJOeBKufzvHul2F8fM5S6nMqYVu+v/BM500tebbQH2m1EhWkfo4gwSJt7ViT
+CwrrxW8hHuGCe00YcehIpOifdrTS/JZ1zLR3vK9cBBHgNfGOmI2tr/zPM87ZGPAt
+21Ln/rX03hQSSD57GB8RSBvIG8EBRqv3zOaKeex8W8Ake1tIm6v7bDXrHqWM1I3p
+yjIu06VhC0qzjaPVGmSg/4LKd7y2aJI7th7uLgVf8sBQqFvsDBpRvebiN4OnUFYn
+2TeRHbGn3kx4ZMCagaZAHe+VKZUlclK/EerPWR4wUE3AOWIbUlDGmPCMy+p5dCuG
+ba7nJ+Yr/JiNcdjZnjsp9Dwcfyi9OI2xtZWOh4g4v0207mTtuH60ZZpdGNHvEDo4
+PpdjfTfdcRjeB3Pg4+AjcKhCOe7mM93LqkhZ4Y3lPi9++PMJCzqgjjYkPRDTYGpq
+gzjdaqJwtE7GhDAceT9LZ7ohmrWCbweSoy85Z0OTgWlUHtPLZY8VzFfmp/mJFGCI
+XjbjLeAeH7jH7t8A7jm4kawkgulR276xFH4MMtV7V3xYo/KTAyDGwrtk6WkAv53R
+yJmw6/0hdQQeJQjzc4Oo
+=7PFb
 -----END PGP SIGNATURE-----

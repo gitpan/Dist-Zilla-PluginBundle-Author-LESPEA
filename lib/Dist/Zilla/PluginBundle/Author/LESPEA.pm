@@ -4,7 +4,7 @@ use utf8;
 
 package Dist::Zilla::PluginBundle::Author::LESPEA;
 BEGIN {
-  $Dist::Zilla::PluginBundle::Author::LESPEA::VERSION = '1.001000';
+  $Dist::Zilla::PluginBundle::Author::LESPEA::VERSION = '1.002000';
 }
 BEGIN {
   $Dist::Zilla::PluginBundle::Author::LESPEA::AUTHORITY = 'cpan:LESPEA';
@@ -202,6 +202,7 @@ sub _add_static {
         'PortabilityTests',
         'UnusedVarsTests',
         'CPANChangesTests',
+        'SpellingCommonMistakesTests',
 
         #   Move all the xt/*.t files into the normal test directory
         'ExtraTests',
@@ -301,7 +302,7 @@ Dist::Zilla::PluginBundle::Author::LESPEA - LESPEA's Dist::Zilla Configuration
 
 =head1 VERSION
 
-version 1.001000
+version 1.002000
 
 =head1 SYNOPSIS
 
@@ -641,6 +642,10 @@ L<Dist::Zilla::Plugin::ReportVersions::Tiny|Dist::Zilla::Plugin::ReportVersions:
 =item *
 
 L<Dist::Zilla::Plugin::ShareDir|Dist::Zilla::Plugin::ShareDir>
+
+=item *
+
+L<Dist::Zilla::Plugin::SpellingCommonMistakesTests|Dist::Zilla::Plugin::SpellingCommonMistakesTests>
 
 =item *
 

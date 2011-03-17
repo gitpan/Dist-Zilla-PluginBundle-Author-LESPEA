@@ -95,6 +95,7 @@ eval { $v .= pmver('Dist::Zilla::Plugin::PruneCruft','any version') };
 eval { $v .= pmver('Dist::Zilla::Plugin::ReadmeAnyFromPod','any version') };
 eval { $v .= pmver('Dist::Zilla::Plugin::ReportVersions::Tiny','any version') };
 eval { $v .= pmver('Dist::Zilla::Plugin::ShareDir','any version') };
+eval { $v .= pmver('Dist::Zilla::Plugin::SpellingCommonMistakesTests','any version') };
 eval { $v .= pmver('Dist::Zilla::Plugin::SynopsisTests','any version') };
 eval { $v .= pmver('Dist::Zilla::Plugin::TestRelease','any version') };
 eval { $v .= pmver('Dist::Zilla::Plugin::UnusedVarsTests','any version') };

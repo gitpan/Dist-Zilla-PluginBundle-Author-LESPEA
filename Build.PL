@@ -23,7 +23,7 @@ my %module_build_args = (
     'Adam Lesperance <lespea@gmail.com>'
   ],
   'dist_name' => 'Dist-Zilla-PluginBundle-Author-LESPEA',
-  'dist_version' => '1.001000',
+  'dist_version' => '1.002000',
   'license' => 'perl',
   'module_name' => 'Dist::Zilla::PluginBundle::Author::LESPEA',
   'recommends' => {},
@@ -75,6 +75,7 @@ my %module_build_args = (
     'Dist::Zilla::Plugin::ReadmeAnyFromPod' => '0',
     'Dist::Zilla::Plugin::ReportVersions::Tiny' => '0',
     'Dist::Zilla::Plugin::ShareDir' => '0',
+    'Dist::Zilla::Plugin::SpellingCommonMistakesTests' => '0',
     'Dist::Zilla::Plugin::SynopsisTests' => '0',
     'Dist::Zilla::Plugin::TestRelease' => '0',
     'Dist::Zilla::Plugin::UnusedVarsTests' => '0',

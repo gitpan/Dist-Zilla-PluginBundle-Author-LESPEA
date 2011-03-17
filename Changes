@@ -1,5 +1,10 @@
 Revision history for Dist-Zilla-PluginBundle-Author-LESPEA
 
+1.002000  2011-03-17 06:15:00 America/Chicago
+    [Enhancement]
+    *   Add SpellingCommonMistakesTests
+
+
 1.001000  2011-03-17 05:11:54 America/Chicago
     [Bugfix]
     *   Add more manual dependencies to try fix the cluster that is ActiveState

@@ -77,6 +77,7 @@ my %WriteMakefileArgs = (
     'Dist::Zilla::Plugin::ReadmeAnyFromPod' => '0',
     'Dist::Zilla::Plugin::ReportVersions::Tiny' => '0',
     'Dist::Zilla::Plugin::ShareDir' => '0',
+    'Dist::Zilla::Plugin::SpellingCommonMistakesTests' => '0',
     'Dist::Zilla::Plugin::SynopsisTests' => '0',
     'Dist::Zilla::Plugin::TestRelease' => '0',
     'Dist::Zilla::Plugin::UnusedVarsTests' => '0',
@@ -113,7 +114,7 @@ my %WriteMakefileArgs = (
     'namespace::autoclean' => '0.12',
     'utf8' => '0'
   },
-  'VERSION' => '1.001000',
+  'VERSION' => '1.002000',
   'test' => {
     'TESTS' => 't/*.t'
   }

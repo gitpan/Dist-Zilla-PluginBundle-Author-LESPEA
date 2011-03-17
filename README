@@ -3,7 +3,7 @@ NAME
     Configuration
 
 VERSION
-    version 1.001000
+    version 1.002000
 
 SYNOPSIS
         #  In dist.ini:
@@ -242,6 +242,8 @@ SEE ALSO
     *   Dist::Zilla::Plugin::ReportVersions::Tiny
 
     *   Dist::Zilla::Plugin::ShareDir
+
+    *   Dist::Zilla::Plugin::SpellingCommonMistakesTests
 
     *   Dist::Zilla::Plugin::SynopsisTests
 
