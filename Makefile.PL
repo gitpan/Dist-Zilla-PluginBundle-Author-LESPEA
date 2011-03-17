@@ -2,7 +2,7 @@
 use strict;
 use warnings;
 
-BEGIN { require 5.008; }
+BEGIN { require 5.010; }
 
 use ExtUtils::MakeMaker 6.31;
 
@@ -20,9 +20,7 @@ my %WriteMakefileArgs = (
     'File::Find' => '0',
     'File::Temp' => '0',
     'ExtUtils::MakeMaker' => '6.31',
-    'Scalar::Util' => '0',
-    'Test::More' => '0.94',
-    'perl' => '5.004'
+    'Test::More' => '0.88'
   },
   'CONFIGURE_REQUIRES' => {
     'File::ShareDir::Install' => '0.03',
@@ -35,12 +33,12 @@ my %WriteMakefileArgs = (
   'PREREQ_PM' => {
     'CPAN::Meta::YAML' => '0',
     'Carp' => '0',
+    'Dist::Zilla' => '4.200004',
     'Dist::Zilla::Plugin::ArchiveRelease' => '0',
     'Dist::Zilla::Plugin::Authority' => '0',
     'Dist::Zilla::Plugin::AutoMetaResources' => '0',
     'Dist::Zilla::Plugin::AutoPrereqs' => '0',
     'Dist::Zilla::Plugin::CPANChangesTests' => '0',
-    'Dist::Zilla::Plugin::CheckChangesTests' => '0',
     'Dist::Zilla::Plugin::CompileTests' => '0',
     'Dist::Zilla::Plugin::ConfirmRelease' => '0',
     'Dist::Zilla::Plugin::ConsistentVersionTest' => '0',
@@ -70,7 +68,6 @@ my %WriteMakefileArgs = (
     'Dist::Zilla::Plugin::ModuleBuild' => '0',
     'Dist::Zilla::Plugin::NextRelease' => '0',
     'Dist::Zilla::Plugin::NoTabsTests' => '0',
-    'Dist::Zilla::Plugin::PerlTidy' => '0',
     'Dist::Zilla::Plugin::PkgVersion' => '0',
     'Dist::Zilla::Plugin::PodCoverageTests' => '0',
     'Dist::Zilla::Plugin::PodSyntaxTests' => '0',
@@ -87,14 +84,15 @@ my %WriteMakefileArgs = (
     'Dist::Zilla::Role::MintingProfile::ShareDir' => '0',
     'Dist::Zilla::Role::PluginBundle::Easy' => '0',
     'Module::Metadata' => '0',
-    'Moose' => '0',
+    'Moose' => '1.24',
     'PPIx::Regexp' => '0',
+    'Package::DeprecationManager' => '0.10',
     'Perl::Critic::Bangs' => '0',
     'Perl::Critic::Lax' => '0',
     'Perl::Critic::Pulp' => '0',
     'Perl::Critic::StricterSubs' => '0',
     'Perl::Critic::Swift' => '0',
-    'Perl::Critic::Utils::PPIRegexp' => '0',
+    'Perl::Critic::Utils::PPIRegexp' => '1.108',
     'Perl::MinimumVersion' => '0',
     'Perl::OSType' => '0',
     'Perl::PrereqScanner' => '0',
@@ -109,14 +107,13 @@ my %WriteMakefileArgs = (
     'Pod::Weaver::Section::WarrantyDisclaimer' => '0',
     'String::Format' => '0',
     'Test::CPAN::Meta' => '0',
-    'Test::CheckChanges' => '0',
     'Test::EOL' => '0.8',
     'Test::Perl::Critic' => '0',
     'Test::Pod::Content' => '0',
     'namespace::autoclean' => '0.12',
     'utf8' => '0'
   },
-  'VERSION' => '1.000000',
+  'VERSION' => '1.001000',
   'test' => {
     'TESTS' => 't/*.t'
   }

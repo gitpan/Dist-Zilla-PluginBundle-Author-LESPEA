@@ -1,4 +1,17 @@
 Revision history for Dist-Zilla-PluginBundle-Author-LESPEA
 
+1.001000  2011-03-17 05:11:54 America/Chicago
+    [Bugfix]
+    *   Add more manual dependencies to try fix the cluster that is ActiveState
+
+    [Enhancement]
+    *   Remove Perl::Tidy plugin (keep tidy config file in template though)
+    *   Switch to ReportVersions::Tiny
+    *   Remove CheckChanges since it breaks ReportVersions::Tiny
+
+    [Minor]
+    *   All option examples should be code formatted to preserve formatting
+
+
 1.000000  2011-02-19 17:35:20 America/Chicago
     *   Initial version (heavily modified from RTHOMPSON & KENTNL's bundle)

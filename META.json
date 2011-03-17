@@ -4,7 +4,7 @@
       "Adam Lesperance <lespea@gmail.com>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 4.200004, CPAN::Meta::Converter version 2.110440",
+   "generated_by" : "Dist::Zilla version 4.200004, CPAN::Meta::Converter version 2.110580",
    "license" : [
       "perl_5"
    ],
@@ -41,12 +41,12 @@
          "requires" : {
             "CPAN::Meta::YAML" : 0,
             "Carp" : 0,
+            "Dist::Zilla" : "4.200004",
             "Dist::Zilla::Plugin::ArchiveRelease" : 0,
             "Dist::Zilla::Plugin::Authority" : 0,
             "Dist::Zilla::Plugin::AutoMetaResources" : 0,
             "Dist::Zilla::Plugin::AutoPrereqs" : 0,
             "Dist::Zilla::Plugin::CPANChangesTests" : 0,
-            "Dist::Zilla::Plugin::CheckChangesTests" : 0,
             "Dist::Zilla::Plugin::CompileTests" : 0,
             "Dist::Zilla::Plugin::ConfirmRelease" : 0,
             "Dist::Zilla::Plugin::ConsistentVersionTest" : 0,
@@ -76,7 +76,6 @@
             "Dist::Zilla::Plugin::ModuleBuild" : 0,
             "Dist::Zilla::Plugin::NextRelease" : 0,
             "Dist::Zilla::Plugin::NoTabsTests" : 0,
-            "Dist::Zilla::Plugin::PerlTidy" : 0,
             "Dist::Zilla::Plugin::PkgVersion" : 0,
             "Dist::Zilla::Plugin::PodCoverageTests" : 0,
             "Dist::Zilla::Plugin::PodSyntaxTests" : 0,
@@ -93,14 +92,15 @@
             "Dist::Zilla::Role::MintingProfile::ShareDir" : 0,
             "Dist::Zilla::Role::PluginBundle::Easy" : 0,
             "Module::Metadata" : 0,
-            "Moose" : 0,
+            "Moose" : "1.24",
             "PPIx::Regexp" : 0,
+            "Package::DeprecationManager" : "0.10",
             "Perl::Critic::Bangs" : 0,
             "Perl::Critic::Lax" : 0,
             "Perl::Critic::Pulp" : 0,
             "Perl::Critic::StricterSubs" : 0,
             "Perl::Critic::Swift" : 0,
-            "Perl::Critic::Utils::PPIRegexp" : 0,
+            "Perl::Critic::Utils::PPIRegexp" : "1.108",
             "Perl::MinimumVersion" : 0,
             "Perl::OSType" : 0,
             "Perl::PrereqScanner" : 0,
@@ -115,12 +115,11 @@
             "Pod::Weaver::Section::WarrantyDisclaimer" : 0,
             "String::Format" : 0,
             "Test::CPAN::Meta" : 0,
-            "Test::CheckChanges" : 0,
             "Test::EOL" : "0.8",
             "Test::Perl::Critic" : 0,
             "Test::Pod::Content" : 0,
             "namespace::autoclean" : "0.12",
-            "perl" : "5.008",
+            "perl" : "5.010",
             "utf8" : 0
          }
       },
@@ -129,9 +128,7 @@
             "English" : 0,
             "File::Find" : 0,
             "File::Temp" : 0,
-            "Scalar::Util" : 0,
-            "Test::More" : "0.94",
-            "perl" : "5.004"
+            "Test::More" : "0.88"
          }
       }
    },
@@ -148,7 +145,7 @@
          "web" : "https://github.com/lespea/dist-zilla-pluginbundle-author-lespea"
       }
    },
-   "version" : "1.000000",
+   "version" : "1.001000",
    "x_Dist_Zilla" : {
       "plugins" : [
          {
@@ -160,11 +157,6 @@
             "class" : "Dist::Zilla::Plugin::CopyFilesFromBuild",
             "name" : "@Author::LESPEA/@Filter/CopyFilesFromBuild",
             "version" : "0.103510"
-         },
-         {
-            "class" : "Dist::Zilla::Plugin::PerlTidy",
-            "name" : "@Author::LESPEA/@Filter/PerlTidy",
-            "version" : "0.09"
          },
          {
             "class" : "Dist::Zilla::Plugin::UploadToCPAN",
@@ -184,7 +176,7 @@
          {
             "class" : "Dist::Zilla::Plugin::Authority",
             "name" : "@Author::LESPEA/@Filter/Authority",
-            "version" : "1.003"
+            "version" : "1.004"
          },
          {
             "class" : "Dist::Zilla::Plugin::PkgVersion",
@@ -215,11 +207,6 @@
             "class" : "Dist::Zilla::Plugin::MetaConfig",
             "name" : "@Author::LESPEA/@Filter/MetaConfig",
             "version" : "4.200004"
-         },
-         {
-            "class" : "Dist::Zilla::Plugin::CheckChangesTests",
-            "name" : "@Author::LESPEA/@Filter/CheckChangesTests",
-            "version" : "1.100900"
          },
          {
             "class" : "Dist::Zilla::Plugin::CompileTests",
@@ -317,9 +304,9 @@
             "version" : "4.200004"
          },
          {
-            "class" : "Dist::Zilla::Plugin::ReportVersions",
-            "name" : "@Author::LESPEA/@Filter/ReportVersions",
-            "version" : "1.102460"
+            "class" : "Dist::Zilla::Plugin::ReportVersions::Tiny",
+            "name" : "@Author::LESPEA/@Filter/ReportVersions::Tiny",
+            "version" : "1.03"
          },
          {
             "class" : "Dist::Zilla::Plugin::ModuleBuild",
@@ -399,22 +386,22 @@
          {
             "class" : "Dist::Zilla::Plugin::Git::Check",
             "name" : "Git::Check",
-            "version" : "1.110480"
+            "version" : "1.110500"
          },
          {
             "class" : "Dist::Zilla::Plugin::Git::Commit",
             "name" : "Commit_Changes",
-            "version" : "1.110480"
+            "version" : "1.110500"
          },
          {
             "class" : "Dist::Zilla::Plugin::Git::Tag",
             "name" : "Git::Tag",
-            "version" : "1.110480"
+            "version" : "1.110500"
          },
          {
             "class" : "Dist::Zilla::Plugin::Git::Push",
             "name" : "Git::Push",
-            "version" : "1.110480"
+            "version" : "1.110500"
          },
          {
             "class" : "Dist::Zilla::Plugin::ModuleShareDirs",

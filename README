@@ -3,7 +3,7 @@ NAME
     Configuration
 
 VERSION
-    version 1.000000
+    version 1.001000
 
 SYNOPSIS
         #  In dist.ini:
@@ -17,7 +17,6 @@ DESCRIPTION
         [AutoMetaResources]
         [AutoPrereqs]
         [CPANChangesTests]
-        [CheckChangesTests]
         [CompileTests]
         [ConfirmRelease]
         [ConsistentVersionTest]
@@ -47,14 +46,13 @@ DESCRIPTION
         [ModuleBuild]
         [NextRelease]
         [NoTabsTests]
-        [PerlTidy]
         [PkgVersion]
         [PodCoverageTests]
         [PodSyntaxTests]
         [PodWeaver]
         [PortabilityTests]
         [PruneCruft]
-        [ReportVersions]
+        [ReportVersions::Tiny]
         [ShareDir]
         [SynopsisTests]
         [TestRelease]
@@ -70,8 +68,9 @@ OPTIONS
 
     Example:
 
-    ; Remove these two plugins from the bundle -remove = CriticTests -remove
-    = SynopsisTests
+        ; Remove these two plugins from the bundle
+        -remove = CriticTests
+        -remove = SynopsisTests
 
   copy_file, move_file
     If you want to copy or move files out of the build dir and into the
@@ -90,7 +89,9 @@ OPTIONS
 
     Example:
 
-    copy_file = README move_file = README.pod copy_file = README.txt
+        copy_file = README
+        move_file = README.pod
+        copy_file = README.txt
 
   release
     This option chooses the type of release to do. The default is 'real,'
@@ -104,10 +105,14 @@ OPTIONS
 
     Examples:
 
-    ; Release to CPAN for real (default) release = real ; For testing, you
-    can do fake releases release = fake ; Or you can choose no release
-    plugin release = none ; Or you can specify a specific release plugin.
-    release = OtherReleasePlugin
+        ; Release to CPAN for real (default)
+        release = real
+        ; For testing, you can do fake releases
+        release = fake
+        ; Or you can choose no release plugin
+        release = none
+        ; Or you can specify a specific release plugin.
+        release = OtherReleasePlugin
 
   archive, archive_directory
     If set to true, the "archive" option copies each released version of the
@@ -117,8 +122,11 @@ OPTIONS
 
     Examples:
 
-    ; archive each release to the "releases" directory archive = true
-    archive_directory = releases ; Or don't archive archive = false
+        ; archive each release to the "releases" directory
+        archive = true
+        archive_directory = releases
+        ; Or don't archive
+        archive = false
 
   include_dotfiles
     If this is set to true (not the default), then any file that includes a
@@ -126,7 +134,7 @@ OPTIONS
 
     Example:
 
-    include_dotfiles = true
+        include_dotfiles = true
 
   compile_synopsis
     If this is set to true (the default), then the SynopsisTests plugin will
@@ -136,15 +144,7 @@ OPTIONS
 
     Example:
 
-    compile_synopsis = false
-
-  tidy_perl
-    If this is set to true (not the default), then PerlTidy will clean up
-    your code before it is sent out with your distribution
-
-    Example:
-
-    tidy_perl = true
+        compile_synopsis = false
 
   add_meta
     If this is set to true (the default), then the AutoMetaResources and
@@ -153,7 +153,7 @@ OPTIONS
 
     Example:
 
-    add_meta = false
+        add_meta = false
 
 SEE ALSO
     Please see those modules/websites for more information related to this
@@ -168,8 +168,6 @@ SEE ALSO
     *   Dist::Zilla::Plugin::AutoPrereqs
 
     *   Dist::Zilla::Plugin::CPANChangesTests
-
-    *   Dist::Zilla::Plugin::CheckChangesTests
 
     *   Dist::Zilla::Plugin::CompileTests
 
@@ -229,8 +227,6 @@ SEE ALSO
 
     *   Dist::Zilla::Plugin::NoTabsTests
 
-    *   Dist::Zilla::Plugin::PerlTidy
-
     *   Dist::Zilla::Plugin::PkgVersion
 
     *   Dist::Zilla::Plugin::PodCoverageTests
@@ -243,7 +239,7 @@ SEE ALSO
 
     *   Dist::Zilla::Plugin::PruneCruft
 
-    *   Dist::Zilla::Plugin::ReportVersions
+    *   Dist::Zilla::Plugin::ReportVersions::Tiny
 
     *   Dist::Zilla::Plugin::ShareDir
 

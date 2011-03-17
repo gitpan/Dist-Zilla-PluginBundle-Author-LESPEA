@@ -4,7 +4,7 @@ use utf8;
 
 package Dist::Zilla::PluginBundle::Author::LESPEA;
 BEGIN {
-  $Dist::Zilla::PluginBundle::Author::LESPEA::VERSION = '1.000000';
+  $Dist::Zilla::PluginBundle::Author::LESPEA::VERSION = '1.001000';
 }
 BEGIN {
   $Dist::Zilla::PluginBundle::Author::LESPEA::AUTHORITY = 'cpan:LESPEA';
@@ -34,7 +34,7 @@ sub _parse_bool {
     return   if $setting =~ m{^(?:false|no|0)$}xsmi;
 
     die "Invalid boolean value $setting. Valid values are true/yes/1 or false/no/0";
-} ## end sub _parse_bool
+}
 
 
 
@@ -45,7 +45,6 @@ sub configure {
     my $self = shift;
 
     my $defaults = {
-
         # By default release to cpan
         release => 'real',
 
@@ -53,15 +52,12 @@ sub configure {
         include_dotfiles => 0,
 
         # Archive releases
-        archive           => 1,
+        archive => 1,
         archive_directory => 'releases',
 
         # Copy README.pod from build dir to dist dir, for Github and suchlike.
         copy_file => [],
         move_file => [],
-
-        # Use perl-tidy
-        tidy_perl => 1,
 
         # Add CPAN meta-info (adds git stuff too)
         add_meta => 1,
@@ -70,85 +66,85 @@ sub configure {
         compile_synopsis => 1,
     };
 
-    my %args = ( %$defaults, %{ $self->payload } );
+    my %args = (%$defaults, %{$self->payload});
 
 
     #  Actually set everything up
-    return if _add_variable( $self, %args );
+    return if _add_variable($self, %args);
     _add_static($self);
 
     return;
-} ## end sub configure
+}
 
 
 
 #  Add the "variable" plugins
 sub _add_variable {
-    my ( $self, %args ) = @_;
+    my ($self, %args) = @_;
 
     # Use the @Filter bundle to handle '-remove'.
-    if ( $args{'-remove'} ) {
-        $self->add_bundle( '@Filter' => { %args, -bundle => '@Author::LESPEA' } );    ## no critic 'RequireInterpolationOfMetachars'
+    if ($args{'-remove'}) {
+        $self->add_bundle('@Filter' => { %args, -bundle => '@Author::LESPEA' });  ## no critic 'RequireInterpolationOfMetachars'
         return 1;
     }
 
     #   Bring everything together so we can start processing everything
-    if ( $args{include_dotfiles} ) {
-        $self->add_plugins( [ 'GatherDir' => { include_dotfiles => 1 } ] );
+    if ($args{include_dotfiles}) {
+        $self->add_plugins( ['GatherDir' => {include_dotfiles => 1}] );
     }
     else {
-        $self->add_plugins('GatherDir');
+        $self->add_plugins( 'GatherDir' );
     }
 
     # Copy files from build dir
-    $self->add_plugins( [ 'CopyFilesFromBuild' => { copy => ( $args{copy_file} || [q{}] ),
-                                                    move => ( $args{move_file} || [q{}] ),
-                          }
-                        ]
+    $self->add_plugins(
+        [ 'CopyFilesFromBuild' => {
+            copy => ($args{copy_file} || [ q{} ]),
+            move => ($args{move_file} || [ q{} ]),
+        } ]
     );
 
-    # Decide whether to test SYNOPSIS for syntax.
-    if ( _parse_bool( $args{tidy_perl} ) ) {
-        $self->add_plugins('PerlTidy');
-    }
-
     # Choose release plugin
-    if ( lc $args{release} eq 'real' ) {
+    if (lc $args{release} eq 'real') {
         $self->add_plugins('UploadToCPAN');
     }
-    elsif ( lc $args{release} eq 'fake' ) {
+    elsif (lc $args{release} eq 'fake') {
         $self->add_plugins('FakeRelease');
     }
-    elsif ( lc $args{release} eq 'none' ) {
-
+    elsif (lc $args{release} eq 'none') {
         # No release plugin
     }
     else {
-        $self->add_plugins("$_");
+        $self->add_plugins("$_")
     }
 
     # Choose whether and where to archive releases
-    if ( _parse_bool( $args{archive} ) ) {
-        $self->add_plugins( [ 'ArchiveRelease' => { directory => $args{archive_directory}, } ], );
+    if (_parse_bool($args{archive})) {
+        $self->add_plugins(
+            ['ArchiveRelease' => {
+                directory => $args{archive_directory},
+            } ],
+        );
     }
 
-    if ( _parse_bool( $args{add_meta} ) ) {
-        $self->add_plugins( [  'AutoMetaResources' => { 'homepage'          => 'http://search.cpan.org/dist/%{dist}',
-                                                        'bugtracker.rt'     => 1,
-                                                        'repository.github' => 'user:lespea',
-                               }
-                            ],
-                            'Authority'
+    if (_parse_bool($args{add_meta})) {
+        $self->add_plugins(
+            ['AutoMetaResources' => {
+                'homepage'          => 'http://search.cpan.org/dist/%{dist}',
+                'bugtracker.rt'     => 1,
+                'repository.github' => 'user:lespea',
+            }],
+            'Authority'
         );
-    } ## end if ( _parse_bool( $args...))
+    }
 
     # Decide whether to test SYNOPSIS for syntax.
-    if ( _parse_bool( $args{compile_synopsis} ) ) {
+    if (_parse_bool($args{compile_synopsis})) {
         $self->add_plugins('SynopsisTests');
     }
 
     return;
-} ## end sub _add_variable
+}
 
 
 
@@ -191,7 +187,6 @@ sub _add_static {
         ################################
 
         #  Pretty much every test plugin available
-        'CheckChangesTests',
         'CompileTests',
         'ConsistentVersionTest',
         'CriticTests',
@@ -219,7 +214,6 @@ sub _add_static {
 
         #   Remove junk that isn't needed in the package
         'PruneCruft',
-
         #['PruneCruft' => { except => 'share/.*' }],
         'ManifestSkip',
 
@@ -230,7 +224,7 @@ sub _add_static {
         'ShareDir',
 
         #   All the modules we're using (for test reporting)
-        'ReportVersions',
+        'ReportVersions::Tiny',
 
         #   Generate the builders that will install the module(s)
         'ModuleBuild',
@@ -244,7 +238,9 @@ sub _add_static {
         ################################
 
         #   Don't let cpan index the following dirs
-        [ 'MetaNoIndex' => { directory => [qw/ inc t xt utils share example examples /], } ],
+        ['MetaNoIndex' => {
+            directory => [qw/ inc t xt utils share example examples /],
+        }],
 
         #   Generate the meta data
         'License',
@@ -253,27 +249,20 @@ sub _add_static {
         'MetaYAML',
 
         #   Readme's
-        [  'ReadmeAnyFromPod',
-           'html.build',
-           {  filename => 'README.html',
-              type     => 'html',
-           }
-        ],
-        [  'ReadmeAnyFromPod',
-           'text.build',
-           {  filename => 'README',
-              type     => 'text',
-           }
-        ],
-
+        ['ReadmeAnyFromPod', 'html.build', {
+            filename => 'README.html',
+            type => 'html',
+        }],
+        ['ReadmeAnyFromPod', 'text.build', {
+            filename => 'README',
+            type => 'text',
+        }],
         # This one gets copied out of the build dir by default, and does not become part of the dist.
-        [  'ReadmeAnyFromPod',
-           'pod.root',
-           {  filename => 'README.pod',
-              type     => 'pod',
-              location => 'root',
-           }
-        ],
+        ['ReadmeAnyFromPod', 'pod.root', {
+            filename => 'README.pod',
+            type => 'pod',
+            location => 'root',
+        }],
 
         #   Generates the manifest (needs to come last!)
         'Manifest',
@@ -292,7 +281,7 @@ sub _add_static {
     );
 
     return;
-} ## end sub _add_static
+}
 
 
 
@@ -312,7 +301,7 @@ Dist::Zilla::PluginBundle::Author::LESPEA - LESPEA's Dist::Zilla Configuration
 
 =head1 VERSION
 
-version 1.000000
+version 1.001000
 
 =head1 SYNOPSIS
 
@@ -328,7 +317,6 @@ This plugin bundle, in its default configuration, is equivalent to:
     [AutoMetaResources]
     [AutoPrereqs]
     [CPANChangesTests]
-    [CheckChangesTests]
     [CompileTests]
     [ConfirmRelease]
     [ConsistentVersionTest]
@@ -358,14 +346,13 @@ This plugin bundle, in its default configuration, is equivalent to:
     [ModuleBuild]
     [NextRelease]
     [NoTabsTests]
-    [PerlTidy]
     [PkgVersion]
     [PodCoverageTests]
     [PodSyntaxTests]
     [PodWeaver]
     [PortabilityTests]
     [PruneCruft]
-    [ReportVersions]
+    [ReportVersions::Tiny]
     [ShareDir]
     [SynopsisTests]
     [TestRelease]
@@ -383,9 +370,9 @@ Obviously, the default is not to remove any plugins.
 
 Example:
 
-; Remove these two plugins from the bundle
--remove = CriticTests
--remove = SynopsisTests
+    ; Remove these two plugins from the bundle
+    -remove = CriticTests
+    -remove = SynopsisTests
 
 =head2 copy_file, move_file
 
@@ -405,9 +392,9 @@ of C<copy_file>.
 
 Example:
 
-copy_file = README
-move_file = README.pod
-copy_file = README.txt
+    copy_file = README
+    move_file = README.pod
+    copy_file = README.txt
 
 =head2 release
 
@@ -423,14 +410,14 @@ name to be loaded.
 
 Examples:
 
-; Release to CPAN for real (default)
-release = real
-; For testing, you can do fake releases
-release = fake
-; Or you can choose no release plugin
-release = none
-; Or you can specify a specific release plugin.
-release = OtherReleasePlugin
+    ; Release to CPAN for real (default)
+    release = real
+    ; For testing, you can do fake releases
+    release = fake
+    ; Or you can choose no release plugin
+    release = none
+    ; Or you can specify a specific release plugin.
+    release = OtherReleasePlugin
 
 =head2 archive, archive_directory
 
@@ -441,11 +428,11 @@ specified using C<archive_directory>, which is F<releases> by default.
 
 Examples:
 
-; archive each release to the "releases" directory
-archive = true
-archive_directory = releases
-; Or don't archive
-archive = false
+    ; archive each release to the "releases" directory
+    archive = true
+    archive_directory = releases
+    ; Or don't archive
+    archive = false
 
 =head2 include_dotfiles
 
@@ -454,7 +441,7 @@ If this is set to true (not the default), then any file that includes a leading
 
 Example:
 
-include_dotfiles = true
+    include_dotfiles = true
 
 =head2 compile_synopsis
 
@@ -465,16 +452,7 @@ perl code (case in point: this module), you should set this to false.
 
 Example:
 
-compile_synopsis = false
-
-=head2 tidy_perl
-
-If this is set to true (not the default), then PerlTidy will clean up your code
-before it is sent out with your distribution
-
-Example:
-
-tidy_perl = true
+    compile_synopsis = false
 
 =head2 add_meta
 
@@ -484,7 +462,7 @@ repo, cpan links, etc to the metadata of the plugin.
 
 Example:
 
-add_meta = false
+    add_meta = false
 
 =encoding utf8
 
@@ -515,10 +493,6 @@ L<Dist::Zilla::Plugin::AutoPrereqs|Dist::Zilla::Plugin::AutoPrereqs>
 =item *
 
 L<Dist::Zilla::Plugin::CPANChangesTests|Dist::Zilla::Plugin::CPANChangesTests>
-
-=item *
-
-L<Dist::Zilla::Plugin::CheckChangesTests|Dist::Zilla::Plugin::CheckChangesTests>
 
 =item *
 
@@ -638,10 +612,6 @@ L<Dist::Zilla::Plugin::NoTabsTests|Dist::Zilla::Plugin::NoTabsTests>
 
 =item *
 
-L<Dist::Zilla::Plugin::PerlTidy|Dist::Zilla::Plugin::PerlTidy>
-
-=item *
-
 L<Dist::Zilla::Plugin::PkgVersion|Dist::Zilla::Plugin::PkgVersion>
 
 =item *
@@ -666,7 +636,7 @@ L<Dist::Zilla::Plugin::PruneCruft|Dist::Zilla::Plugin::PruneCruft>
 
 =item *
 
-L<Dist::Zilla::Plugin::ReportVersions|Dist::Zilla::Plugin::ReportVersions>
+L<Dist::Zilla::Plugin::ReportVersions::Tiny|Dist::Zilla::Plugin::ReportVersions::Tiny>
 
 =item *
 
