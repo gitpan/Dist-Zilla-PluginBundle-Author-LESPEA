@@ -33,6 +33,7 @@ my %WriteMakefileArgs = (
   'PREREQ_PM' => {
     'CPAN::Meta::YAML' => '0',
     'Carp' => '0',
+    'Class::MOP' => '1.12',
     'Dist::Zilla' => '4.200004',
     'Dist::Zilla::Plugin::ArchiveRelease' => '0',
     'Dist::Zilla::Plugin::Authority' => '0',
@@ -88,6 +89,7 @@ my %WriteMakefileArgs = (
     'Moose' => '1.24',
     'PPIx::Regexp' => '0',
     'Package::DeprecationManager' => '0.10',
+    'Package::Stash' => '0.26',
     'Perl::Critic::Bangs' => '0',
     'Perl::Critic::Lax' => '0',
     'Perl::Critic::Pulp' => '0',
@@ -114,7 +116,7 @@ my %WriteMakefileArgs = (
     'namespace::autoclean' => '0.12',
     'utf8' => '0'
   },
-  'VERSION' => '1.002000',
+  'VERSION' => '1.002001',
   'test' => {
     'TESTS' => 't/*.t'
   }

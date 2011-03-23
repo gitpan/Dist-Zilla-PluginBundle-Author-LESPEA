@@ -4,7 +4,7 @@ use utf8;
 
 package Dist::Zilla::MintingProfile::Author::LESPEA;
 BEGIN {
-  $Dist::Zilla::MintingProfile::Author::LESPEA::VERSION = '1.002000';
+  $Dist::Zilla::MintingProfile::Author::LESPEA::VERSION = '1.002001';
 }
 BEGIN {
   $Dist::Zilla::MintingProfile::Author::LESPEA::AUTHORITY = 'cpan:LESPEA';
@@ -34,7 +34,7 @@ Dist::Zilla::MintingProfile::Author::LESPEA - LESPEA's Minting Profile
 
 =head1 VERSION
 
-version 1.002000
+version 1.002001
 
 =head1 SYNOPSIS
 

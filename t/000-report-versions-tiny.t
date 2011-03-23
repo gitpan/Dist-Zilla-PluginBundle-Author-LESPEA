@@ -50,6 +50,7 @@ sub pmver {
 
 eval { $v .= pmver('CPAN::Meta::YAML','any version') };
 eval { $v .= pmver('Carp','any version') };
+eval { $v .= pmver('Class::MOP','1.12') };
 eval { $v .= pmver('Dist::Zilla','4.200004') };
 eval { $v .= pmver('Dist::Zilla::Plugin::ArchiveRelease','any version') };
 eval { $v .= pmver('Dist::Zilla::Plugin::Authority','any version') };
@@ -111,6 +112,7 @@ eval { $v .= pmver('Module::Metadata','any version') };
 eval { $v .= pmver('Moose','1.24') };
 eval { $v .= pmver('PPIx::Regexp','any version') };
 eval { $v .= pmver('Package::DeprecationManager','0.10') };
+eval { $v .= pmver('Package::Stash','0.26') };
 eval { $v .= pmver('Perl::Critic::Bangs','any version') };
 eval { $v .= pmver('Perl::Critic::Lax','any version') };
 eval { $v .= pmver('Perl::Critic::Pulp','any version') };

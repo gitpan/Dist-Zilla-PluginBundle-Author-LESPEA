@@ -4,7 +4,7 @@ use utf8;
 
 package Dist::Zilla::PluginBundle::Author::LESPEA;
 BEGIN {
-  $Dist::Zilla::PluginBundle::Author::LESPEA::VERSION = '1.002000';
+  $Dist::Zilla::PluginBundle::Author::LESPEA::VERSION = '1.002001';
 }
 BEGIN {
   $Dist::Zilla::PluginBundle::Author::LESPEA::AUTHORITY = 'cpan:LESPEA';
@@ -241,6 +241,7 @@ sub _add_static {
         #   Don't let cpan index the following dirs
         ['MetaNoIndex' => {
             directory => [qw/ inc t xt utils share example examples /],
+            file      => [qw/ README.html /],
         }],
 
         #   Generate the meta data
@@ -302,7 +303,7 @@ Dist::Zilla::PluginBundle::Author::LESPEA - LESPEA's Dist::Zilla Configuration
 
 =head1 VERSION
 
-version 1.002000
+version 1.002001
 
 =head1 SYNOPSIS
 

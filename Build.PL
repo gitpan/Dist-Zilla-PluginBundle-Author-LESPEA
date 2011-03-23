@@ -23,7 +23,7 @@ my %module_build_args = (
     'Adam Lesperance <lespea@gmail.com>'
   ],
   'dist_name' => 'Dist-Zilla-PluginBundle-Author-LESPEA',
-  'dist_version' => '1.002000',
+  'dist_version' => '1.002001',
   'license' => 'perl',
   'module_name' => 'Dist::Zilla::PluginBundle::Author::LESPEA',
   'recommends' => {},
@@ -31,6 +31,7 @@ my %module_build_args = (
   'requires' => {
     'CPAN::Meta::YAML' => '0',
     'Carp' => '0',
+    'Class::MOP' => '1.12',
     'Dist::Zilla' => '4.200004',
     'Dist::Zilla::Plugin::ArchiveRelease' => '0',
     'Dist::Zilla::Plugin::Authority' => '0',
@@ -86,6 +87,7 @@ my %module_build_args = (
     'Moose' => '1.24',
     'PPIx::Regexp' => '0',
     'Package::DeprecationManager' => '0.10',
+    'Package::Stash' => '0.26',
     'Perl::Critic::Bangs' => '0',
     'Perl::Critic::Lax' => '0',
     'Perl::Critic::Pulp' => '0',
