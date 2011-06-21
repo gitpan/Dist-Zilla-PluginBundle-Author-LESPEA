@@ -1,5 +1,12 @@
 Revision history for Dist-Zilla-PluginBundle-Author-LESPEA
 
+1.003000  2011-06-21 00:26:57 America/Chicago
+    [Enhancement]
+    *   Upgrade to the newest version of Perl::Critic::Bangs and remove deprecated modules
+    *   Switch from CPANChangesTests to Test::CPAN::Changes
+    *   Remove unnecessary dependencies -- doesn't build on ActiveState anyway since they have crazy short timeouts
+    *   Fix Perl::Critic errors
+
 1.002001  2011-03-23 11:34:41 America/Chicago
     [Bugfix]
     *   More manual dependency additions/rearranging to try and get ActiveState to work

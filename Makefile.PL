@@ -2,9 +2,9 @@
 use strict;
 use warnings;
 
-BEGIN { require 5.010; }
+use 5.010;
 
-use ExtUtils::MakeMaker 6.31;
+use ExtUtils::MakeMaker 6.30;
 
 use File::ShareDir::Install;
 install_share dist => "share";
@@ -19,12 +19,12 @@ my %WriteMakefileArgs = (
     'English' => '0',
     'File::Find' => '0',
     'File::Temp' => '0',
-    'ExtUtils::MakeMaker' => '6.31',
+    'ExtUtils::MakeMaker' => '6.30',
     'Test::More' => '0.88'
   },
   'CONFIGURE_REQUIRES' => {
     'File::ShareDir::Install' => '0.03',
-    'ExtUtils::MakeMaker' => '6.31'
+    'ExtUtils::MakeMaker' => '6.30'
   },
   'DISTNAME' => 'Dist-Zilla-PluginBundle-Author-LESPEA',
   'EXE_FILES' => [],
@@ -33,13 +33,11 @@ my %WriteMakefileArgs = (
   'PREREQ_PM' => {
     'CPAN::Meta::YAML' => '0',
     'Carp' => '0',
-    'Class::MOP' => '1.12',
     'Dist::Zilla' => '4.200004',
     'Dist::Zilla::Plugin::ArchiveRelease' => '0',
     'Dist::Zilla::Plugin::Authority' => '0',
     'Dist::Zilla::Plugin::AutoMetaResources' => '0',
     'Dist::Zilla::Plugin::AutoPrereqs' => '0',
-    'Dist::Zilla::Plugin::CPANChangesTests' => '0',
     'Dist::Zilla::Plugin::CompileTests' => '0',
     'Dist::Zilla::Plugin::ConfirmRelease' => '0',
     'Dist::Zilla::Plugin::ConsistentVersionTest' => '0',
@@ -80,22 +78,18 @@ my %WriteMakefileArgs = (
     'Dist::Zilla::Plugin::ShareDir' => '0',
     'Dist::Zilla::Plugin::SpellingCommonMistakesTests' => '0',
     'Dist::Zilla::Plugin::SynopsisTests' => '0',
+    'Dist::Zilla::Plugin::Test::CPAN::Changes' => '0.005',
     'Dist::Zilla::Plugin::TestRelease' => '0',
     'Dist::Zilla::Plugin::UnusedVarsTests' => '0',
     'Dist::Zilla::Plugin::UploadToCPAN' => '0',
     'Dist::Zilla::Role::MintingProfile::ShareDir' => '0',
     'Dist::Zilla::Role::PluginBundle::Easy' => '0',
-    'Module::Metadata' => '0',
-    'Moose' => '1.24',
-    'PPIx::Regexp' => '0',
-    'Package::DeprecationManager' => '0.10',
-    'Package::Stash' => '0.26',
-    'Perl::Critic::Bangs' => '0',
+    'Moose' => '2.0',
+    'Perl::Critic::Bangs' => '1.08',
     'Perl::Critic::Lax' => '0',
     'Perl::Critic::Pulp' => '0',
     'Perl::Critic::StricterSubs' => '0',
     'Perl::Critic::Swift' => '0',
-    'Perl::Critic::Utils::PPIRegexp' => '1.108',
     'Perl::MinimumVersion' => '0',
     'Perl::OSType' => '0',
     'Perl::PrereqScanner' => '0',
@@ -108,15 +102,14 @@ my %WriteMakefileArgs = (
     'Pod::Weaver::Section::SeeAlso' => '0',
     'Pod::Weaver::Section::Support' => '0',
     'Pod::Weaver::Section::WarrantyDisclaimer' => '0',
-    'String::Format' => '0',
     'Test::CPAN::Meta' => '0',
     'Test::EOL' => '0.8',
     'Test::Perl::Critic' => '0',
     'Test::Pod::Content' => '0',
-    'namespace::autoclean' => '0.12',
+    'namespace::autoclean' => '0',
     'utf8' => '0'
   },
-  'VERSION' => '1.002001',
+  'VERSION' => '1.003000',
   'test' => {
     'TESTS' => 't/*.t'
   }

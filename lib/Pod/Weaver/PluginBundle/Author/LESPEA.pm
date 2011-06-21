@@ -4,7 +4,7 @@ use utf8;
 
 package Pod::Weaver::PluginBundle::Author::LESPEA;
 BEGIN {
-  $Pod::Weaver::PluginBundle::Author::LESPEA::VERSION = '1.002001';
+  $Pod::Weaver::PluginBundle::Author::LESPEA::VERSION = '1.003000';
 }
 BEGIN {
   $Pod::Weaver::PluginBundle::Author::LESPEA::AUTHORITY = 'cpan:LESPEA';
@@ -82,7 +82,7 @@ Pod::Weaver::PluginBundle::Author::LESPEA - A bundle that implements LESPEA's pr
 
 =head1 VERSION
 
-version 1.002001
+version 1.003000
 
 =head1 SYNOPSIS
 

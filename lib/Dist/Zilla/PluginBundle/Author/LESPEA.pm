@@ -4,7 +4,7 @@ use utf8;
 
 package Dist::Zilla::PluginBundle::Author::LESPEA;
 BEGIN {
-  $Dist::Zilla::PluginBundle::Author::LESPEA::VERSION = '1.002001';
+  $Dist::Zilla::PluginBundle::Author::LESPEA::VERSION = '1.003000';
 }
 BEGIN {
   $Dist::Zilla::PluginBundle::Author::LESPEA::AUTHORITY = 'cpan:LESPEA';
@@ -101,7 +101,7 @@ sub _add_variable {
         [ 'CopyFilesFromBuild' => {
             copy => ($args{copy_file} || [ q{} ]),
             move => ($args{move_file} || [ q{} ]),
-        } ]
+        } ],
     );
 
     # Choose release plugin
@@ -134,7 +134,7 @@ sub _add_variable {
                 'bugtracker.rt'     => 1,
                 'repository.github' => 'user:lespea',
             }],
-            'Authority'
+            'Authority',
         );
     }
 
@@ -201,7 +201,7 @@ sub _add_static {
         'PodSyntaxTests',
         'PortabilityTests',
         'UnusedVarsTests',
-        'CPANChangesTests',
+        'Test::CPAN::Changes',
         'SpellingCommonMistakesTests',
 
         #   Move all the xt/*.t files into the normal test directory
@@ -303,7 +303,7 @@ Dist::Zilla::PluginBundle::Author::LESPEA - LESPEA's Dist::Zilla Configuration
 
 =head1 VERSION
 
-version 1.002001
+version 1.003000
 
 =head1 SYNOPSIS
 
@@ -318,7 +318,7 @@ This plugin bundle, in its default configuration, is equivalent to:
     [Authority]
     [AutoMetaResources]
     [AutoPrereqs]
-    [CPANChangesTests]
+    [Test::CPAN::Changes]
     [CompileTests]
     [ConfirmRelease]
     [ConsistentVersionTest]
@@ -494,7 +494,7 @@ L<Dist::Zilla::Plugin::AutoPrereqs|Dist::Zilla::Plugin::AutoPrereqs>
 
 =item *
 
-L<Dist::Zilla::Plugin::CPANChangesTests|Dist::Zilla::Plugin::CPANChangesTests>
+L<Dist::Zilla::Plugin::Test::CPAN::Changes|Dist::Zilla::Plugin::Test::CPAN::Changes>
 
 =item *
 
@@ -695,17 +695,23 @@ in addition to those websites please use your favorite search engine to discover
 
 Search CPAN
 
+The default CPAN search engine, useful to view POD in HTML format.
+
 L<http://search.cpan.org/dist/Dist-Zilla-PluginBundle-Author-LESPEA>
 
 =item *
 
 RT: CPAN's Bug Tracker
 
+The RT ( Request Tracker ) website is the default bug/issue tracking system for CPAN.
+
 L<http://rt.cpan.org/NoAuth/Bugs.html?Dist=Dist-Zilla-PluginBundle-Author-LESPEA>
 
 =item *
 
-AnnoCPAN: Annotated CPAN documentation
+AnnoCPAN
+
+The AnnoCPAN is a website that allows community annonations of Perl module documentation.
 
 L<http://annocpan.org/dist/Dist-Zilla-PluginBundle-Author-LESPEA>
 
@@ -713,31 +719,49 @@ L<http://annocpan.org/dist/Dist-Zilla-PluginBundle-Author-LESPEA>
 
 CPAN Ratings
 
+The CPAN Ratings is a website that allows community ratings and reviews of Perl modules.
+
 L<http://cpanratings.perl.org/d/Dist-Zilla-PluginBundle-Author-LESPEA>
 
 =item *
 
 CPAN Forum
 
+The CPAN Forum is a web forum for discussing Perl modules.
+
 L<http://cpanforum.com/dist/Dist-Zilla-PluginBundle-Author-LESPEA>
 
 =item *
 
-CPANTS Kwalitee
+CPANTS
+
+The CPANTS is a website that analyzes the Kwalitee ( code metrics ) of a distribution.
 
 L<http://cpants.perl.org/dist/overview/Dist-Zilla-PluginBundle-Author-LESPEA>
 
 =item *
 
-CPAN Testers Results
+CPAN Testers
 
-L<http://cpantesters.org/distro/D/Dist-Zilla-PluginBundle-Author-LESPEA.html>
+The CPAN Testers is a network of smokers who run automated tests on uploaded CPAN distributions.
+
+L<http://www.cpantesters.org/distro/D/Dist-Zilla-PluginBundle-Author-LESPEA>
 
 =item *
 
 CPAN Testers Matrix
 
+The CPAN Testers Matrix is a website that provides a visual way to determine what Perls/platforms PASSed for a distribution.
+
 L<http://matrix.cpantesters.org/?dist=Dist-Zilla-PluginBundle-Author-LESPEA>
+
+=item *
+
+CPAN Testers Dependencies
+
+The CPAN Testers Dependencies is a website that shows a chart of the test results of all dependencies for a distribution.
+
+L<http://deps.cpantesters.org/?module=Dist::Zilla::PluginBundle::Author::LESPEA>
 
 =back
 
