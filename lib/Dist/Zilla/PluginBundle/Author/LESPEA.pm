@@ -3,8 +3,8 @@ use warnings;
 use utf8;
 
 package Dist::Zilla::PluginBundle::Author::LESPEA;
-BEGIN {
-  $Dist::Zilla::PluginBundle::Author::LESPEA::VERSION = '1.003000';
+{
+  $Dist::Zilla::PluginBundle::Author::LESPEA::VERSION = '1.004000';
 }
 BEGIN {
   $Dist::Zilla::PluginBundle::Author::LESPEA::AUTHORITY = 'cpan:LESPEA';
@@ -140,7 +140,7 @@ sub _add_variable {
 
     # Decide whether to test SYNOPSIS for syntax.
     if (_parse_bool($args{compile_synopsis})) {
-        $self->add_plugins('SynopsisTests');
+        $self->add_plugins('Test::Synopsis');
     }
 
     return;
@@ -187,20 +187,20 @@ sub _add_static {
         ################################
 
         #  Pretty much every test plugin available
-        'CompileTests',
+        'Test::Compile',
         'ConsistentVersionTest',
-        'CriticTests',
-        'DistManifestTests',
+        'Test::Perl::Critic',
+        'Test::DistManifest',
         'EOLTests',
         'HasVersionTests',
-        'KwaliteeTests',
+        'Test::Kwalitee',
         'MetaTests',
-        'MinimumVersionTests',
+        'Test::MinimumVersion',
         'NoTabsTests',
         'PodCoverageTests',
         'PodSyntaxTests',
-        'PortabilityTests',
-        'UnusedVarsTests',
+        'Test::Portability',
+        'Test::UnusedVars',
         'Test::CPAN::Changes',
         'SpellingCommonMistakesTests',
 
@@ -303,7 +303,7 @@ Dist::Zilla::PluginBundle::Author::LESPEA - LESPEA's Dist::Zilla Configuration
 
 =head1 VERSION
 
-version 1.003000
+version 1.004000
 
 =head1 SYNOPSIS
 
@@ -318,13 +318,9 @@ This plugin bundle, in its default configuration, is equivalent to:
     [Authority]
     [AutoMetaResources]
     [AutoPrereqs]
-    [Test::CPAN::Changes]
-    [CompileTests]
     [ConfirmRelease]
     [ConsistentVersionTest]
     [CopyFilesFromBuild]
-    [CriticTests]
-    [DistManifestTests]
     [DualBuilders]
     [EOLTests]
     [ExecDir]
@@ -333,18 +329,16 @@ This plugin bundle, in its default configuration, is equivalent to:
     [GatherDir]
     [HasVersionTests]
     [InstallGuide]
-    [KwaliteeTests]
     [License]
     [MakeMaker]
-    [Manifest]
     [ManifestSkip]
+    [Manifest]
     [MetaConfig]
     [MetaJSON]
     [MetaNoIndex]
     [MetaTests]
     [MetaYAML]
     [MinimumPerl]
-    [MinimumVersionTests]
     [ModuleBuild]
     [NextRelease]
     [NoTabsTests]
@@ -357,8 +351,14 @@ This plugin bundle, in its default configuration, is equivalent to:
     [ReportVersions::Tiny]
     [ShareDir]
     [SynopsisTests]
+    [Test::CPAN::Changes]
+    [Test::Compile]
+    [Test::DistManifest]
+    [Test::Kwalitee]
+    [Test::MinimumVersion]
+    [Test::Perl::Critic]
     [TestRelease]
-    [UnusedVarsTests]
+    [Tests::UnusedVars]
     [UploadToCPAN]
 
 =head1 OPTIONS
@@ -494,14 +494,6 @@ L<Dist::Zilla::Plugin::AutoPrereqs|Dist::Zilla::Plugin::AutoPrereqs>
 
 =item *
 
-L<Dist::Zilla::Plugin::Test::CPAN::Changes|Dist::Zilla::Plugin::Test::CPAN::Changes>
-
-=item *
-
-L<Dist::Zilla::Plugin::CompileTests|Dist::Zilla::Plugin::CompileTests>
-
-=item *
-
 L<Dist::Zilla::Plugin::ConfirmRelease|Dist::Zilla::Plugin::ConfirmRelease>
 
 =item *
@@ -511,14 +503,6 @@ L<Dist::Zilla::Plugin::ConsistentVersionTest|Dist::Zilla::Plugin::ConsistentVers
 =item *
 
 L<Dist::Zilla::Plugin::CopyFilesFromBuild|Dist::Zilla::Plugin::CopyFilesFromBuild>
-
-=item *
-
-L<Dist::Zilla::Plugin::CriticTests|Dist::Zilla::Plugin::CriticTests>
-
-=item *
-
-L<Dist::Zilla::Plugin::DistManifestTests|Dist::Zilla::Plugin::DistManifestTests>
 
 =item *
 
@@ -551,10 +535,6 @@ L<Dist::Zilla::Plugin::HasVersionTests|Dist::Zilla::Plugin::HasVersionTests>
 =item *
 
 L<Dist::Zilla::Plugin::InstallGuide|Dist::Zilla::Plugin::InstallGuide>
-
-=item *
-
-L<Dist::Zilla::Plugin::KwaliteeTests|Dist::Zilla::Plugin::KwaliteeTests>
 
 =item *
 
@@ -598,10 +578,6 @@ L<Dist::Zilla::Plugin::MinimumPerl|Dist::Zilla::Plugin::MinimumPerl>
 
 =item *
 
-L<Dist::Zilla::Plugin::MinimumVersionTests|Dist::Zilla::Plugin::MinimumVersionTests>
-
-=item *
-
 L<Dist::Zilla::Plugin::ModuleBuild|Dist::Zilla::Plugin::ModuleBuild>
 
 =item *
@@ -630,11 +606,11 @@ L<Dist::Zilla::Plugin::PodWeaver|Dist::Zilla::Plugin::PodWeaver>
 
 =item *
 
-L<Dist::Zilla::Plugin::PortabilityTests|Dist::Zilla::Plugin::PortabilityTests>
+L<Dist::Zilla::Plugin::PruneCruft|Dist::Zilla::Plugin::PruneCruft>
 
 =item *
 
-L<Dist::Zilla::Plugin::PruneCruft|Dist::Zilla::Plugin::PruneCruft>
+L<Dist::Zilla::Plugin::ReadmeAnyFromPod|Dist::Zilla::Plugin::ReadmeAnyFromPod>
 
 =item *
 
@@ -650,15 +626,43 @@ L<Dist::Zilla::Plugin::SpellingCommonMistakesTests|Dist::Zilla::Plugin::Spelling
 
 =item *
 
-L<Dist::Zilla::Plugin::SynopsisTests|Dist::Zilla::Plugin::SynopsisTests>
+L<Dist::Zilla::Plugin::Test::CPAN::Changes|Dist::Zilla::Plugin::Test::CPAN::Changes>
+
+=item *
+
+L<Dist::Zilla::Plugin::Test::Compile|Dist::Zilla::Plugin::Test::Compile>
+
+=item *
+
+L<Dist::Zilla::Plugin::Test::DistManifest|Dist::Zilla::Plugin::Test::DistManifest>
+
+=item *
+
+L<Dist::Zilla::Plugin::Test::Kwalitee|Dist::Zilla::Plugin::Test::Kwalitee>
+
+=item *
+
+L<Dist::Zilla::Plugin::Test::MinimumVersion|Dist::Zilla::Plugin::Test::MinimumVersion>
+
+=item *
+
+L<Dist::Zilla::Plugin::Test::Perl::Critic|Dist::Zilla::Plugin::Test::Perl::Critic>
+
+=item *
+
+L<Dist::Zilla::Plugin::Test::Portability|Dist::Zilla::Plugin::Test::Portability>
+
+=item *
+
+L<Dist::Zilla::Plugin::Test::Synopsis|Dist::Zilla::Plugin::Test::Synopsis>
+
+=item *
+
+L<Dist::Zilla::Plugin::Test::UnusedVars|Dist::Zilla::Plugin::Test::UnusedVars>
 
 =item *
 
 L<Dist::Zilla::Plugin::TestRelease|Dist::Zilla::Plugin::TestRelease>
-
-=item *
-
-L<Dist::Zilla::Plugin::UnusedVarsTests|Dist::Zilla::Plugin::UnusedVarsTests>
 
 =item *
 
