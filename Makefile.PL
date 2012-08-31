@@ -16,7 +16,6 @@ my %WriteMakefileArgs = (
   "AUTHOR" => "Adam Lesperance <lespea\@gmail.com>",
   "BUILD_REQUIRES" => {
     "Dist::Zilla::Plugin::Bootstrap::lib" => 0,
-    "English" => 0,
     "File::Find" => 0,
     "File::Temp" => 0,
     "Module::Build" => "0.3601",
@@ -73,18 +72,17 @@ my %WriteMakefileArgs = (
     "Dist::Zilla::Plugin::SpellingCommonMistakesTests" => 0,
     "Dist::Zilla::Plugin::Test::CPAN::Changes" => "0.005",
     "Dist::Zilla::Plugin::Test::Compile" => "1.112400",
-    "Dist::Zilla::Plugin::Test::DistManifest" => "2.0.1",
-    "Dist::Zilla::Plugin::Test::Kwalitee" => 0,
-    "Dist::Zilla::Plugin::Test::MinimumVersion" => "2.0.1",
+    "Dist::Zilla::Plugin::Test::DistManifest" => "v2.0.1",
+    "Dist::Zilla::Plugin::Test::MinimumVersion" => "v2.0.1",
     "Dist::Zilla::Plugin::Test::Perl::Critic" => "2.112410",
-    "Dist::Zilla::Plugin::Test::Portability" => "2.0.1",
-    "Dist::Zilla::Plugin::Test::Synopsis" => "2.0.1",
-    "Dist::Zilla::Plugin::Test::UnusedVars" => "2.0.1",
+    "Dist::Zilla::Plugin::Test::Portability" => "v2.0.1",
+    "Dist::Zilla::Plugin::Test::Synopsis" => "v2.0.1",
     "Dist::Zilla::Plugin::TestRelease" => 0,
     "Dist::Zilla::Plugin::UploadToCPAN" => 0,
     "Dist::Zilla::Role::MintingProfile::ShareDir" => 0,
     "Dist::Zilla::Role::PluginBundle::Easy" => 0,
     "Moose" => "2.0",
+    "Perl::Critic" => "1.118",
     "Perl::Critic::Bangs" => "1.08",
     "Perl::Critic::Lax" => 0,
     "Perl::Critic::Pulp" => 0,
@@ -111,7 +109,7 @@ my %WriteMakefileArgs = (
     "utf8" => 0,
     "warnings" => 0
   },
-  "VERSION" => "1.004000",
+  "VERSION" => "1.005000",
   "test" => {
     "TESTS" => "t/*.t"
   }
@@ -136,8 +134,10 @@ delete $WriteMakefileArgs{CONFIGURE_REQUIRES}
 
 WriteMakefile(%WriteMakefileArgs);
 
+{
 package
 MY;
 use File::ShareDir::Install qw(postamble);
+}
 
 

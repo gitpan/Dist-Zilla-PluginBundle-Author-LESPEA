@@ -4,7 +4,7 @@ use utf8;
 
 package Dist::Zilla::PluginBundle::Author::LESPEA;
 {
-  $Dist::Zilla::PluginBundle::Author::LESPEA::VERSION = '1.004000';
+  $Dist::Zilla::PluginBundle::Author::LESPEA::VERSION = '1.005000';
 }
 BEGIN {
   $Dist::Zilla::PluginBundle::Author::LESPEA::AUTHORITY = 'cpan:LESPEA';
@@ -193,14 +193,14 @@ sub _add_static {
         'Test::DistManifest',
         'EOLTests',
         'HasVersionTests',
-        'Test::Kwalitee',
+        #'Test::Kwalitee',
         'MetaTests',
         'Test::MinimumVersion',
         'NoTabsTests',
         'PodCoverageTests',
         'PodSyntaxTests',
         'Test::Portability',
-        'Test::UnusedVars',
+        #'Test::UnusedVars',
         'Test::CPAN::Changes',
         'SpellingCommonMistakesTests',
 
@@ -295,6 +295,7 @@ no Moose;
 1;
 
 __END__
+
 =pod
 
 =head1 NAME
@@ -303,7 +304,7 @@ Dist::Zilla::PluginBundle::Author::LESPEA - LESPEA's Dist::Zilla Configuration
 
 =head1 VERSION
 
-version 1.004000
+version 1.005000
 
 =head1 SYNOPSIS
 
@@ -354,11 +355,9 @@ This plugin bundle, in its default configuration, is equivalent to:
     [Test::CPAN::Changes]
     [Test::Compile]
     [Test::DistManifest]
-    [Test::Kwalitee]
     [Test::MinimumVersion]
     [Test::Perl::Critic]
     [TestRelease]
-    [Tests::UnusedVars]
     [UploadToCPAN]
 
 =head1 OPTIONS
@@ -638,10 +637,6 @@ L<Dist::Zilla::Plugin::Test::DistManifest|Dist::Zilla::Plugin::Test::DistManifes
 
 =item *
 
-L<Dist::Zilla::Plugin::Test::Kwalitee|Dist::Zilla::Plugin::Test::Kwalitee>
-
-=item *
-
 L<Dist::Zilla::Plugin::Test::MinimumVersion|Dist::Zilla::Plugin::Test::MinimumVersion>
 
 =item *
@@ -655,10 +650,6 @@ L<Dist::Zilla::Plugin::Test::Portability|Dist::Zilla::Plugin::Test::Portability>
 =item *
 
 L<Dist::Zilla::Plugin::Test::Synopsis|Dist::Zilla::Plugin::Test::Synopsis>
-
-=item *
-
-L<Dist::Zilla::Plugin::Test::UnusedVars|Dist::Zilla::Plugin::Test::UnusedVars>
 
 =item *
 
@@ -678,7 +669,7 @@ See perlmodinstall for information and options on installing Perl modules.
 
 Adam Lesperance <lespea@gmail.com>
 
-=for :stopwords cpan testmatrix url annocpan anno bugtracker rt cpants kwalitee diff irc mailto metadata placeholders
+=for :stopwords cpan testmatrix url annocpan anno bugtracker rt cpants kwalitee diff irc mailto metadata placeholders metacpan
 
 =head1 SUPPORT
 
@@ -694,6 +685,14 @@ The following websites have more information about this module, and may be of he
 in addition to those websites please use your favorite search engine to discover more resources.
 
 =over 4
+
+=item *
+
+MetaCPAN
+
+A modern, open-source CPAN search engine, useful to view POD in HTML format.
+
+L<http://metacpan.org/release/Dist-Zilla-PluginBundle-Author-LESPEA>
 
 =item *
 
@@ -715,7 +714,7 @@ L<http://rt.cpan.org/NoAuth/Bugs.html?Dist=Dist-Zilla-PluginBundle-Author-LESPEA
 
 AnnoCPAN
 
-The AnnoCPAN is a website that allows community annonations of Perl module documentation.
+The AnnoCPAN is a website that allows community annotations of Perl module documentation.
 
 L<http://annocpan.org/dist/Dist-Zilla-PluginBundle-Author-LESPEA>
 
@@ -755,7 +754,7 @@ L<http://www.cpantesters.org/distro/D/Dist-Zilla-PluginBundle-Author-LESPEA>
 
 CPAN Testers Matrix
 
-The CPAN Testers Matrix is a website that provides a visual way to determine what Perls/platforms PASSed for a distribution.
+The CPAN Testers Matrix is a website that provides a visual overview of the test results for a distribution on various Perls/platforms.
 
 L<http://matrix.cpantesters.org/?dist=Dist-Zilla-PluginBundle-Author-LESPEA>
 
@@ -816,4 +815,3 @@ SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH
 DAMAGES.
 
 =cut
-
