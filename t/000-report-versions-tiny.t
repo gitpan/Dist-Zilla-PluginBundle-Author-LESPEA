@@ -125,7 +125,6 @@ eval { $v .= pmver('Pod::Weaver::Section::SeeAlso','any version') };
 eval { $v .= pmver('Pod::Weaver::Section::Support','any version') };
 eval { $v .= pmver('Pod::Weaver::Section::WarrantyDisclaimer','any version') };
 eval { $v .= pmver('Test::CPAN::Meta','any version') };
-eval { $v .= pmver('Test::EOL','0.8') };
 eval { $v .= pmver('Test::More','0.88') };
 eval { $v .= pmver('Test::Perl::Critic','any version') };
 eval { $v .= pmver('Test::Pod::Content','any version') };

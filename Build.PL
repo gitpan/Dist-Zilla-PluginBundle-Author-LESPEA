@@ -22,7 +22,7 @@ my %module_build_args = (
     "Adam Lesperance <lespea\@gmail.com>"
   ],
   "dist_name" => "Dist-Zilla-PluginBundle-Author-LESPEA",
-  "dist_version" => "1.005000",
+  "dist_version" => "1.005001",
   "license" => "perl",
   "module_name" => "Dist::Zilla::PluginBundle::Author::LESPEA",
   "recommends" => {},
@@ -99,7 +99,6 @@ my %module_build_args = (
     "Pod::Weaver::Section::Support" => 0,
     "Pod::Weaver::Section::WarrantyDisclaimer" => 0,
     "Test::CPAN::Meta" => 0,
-    "Test::EOL" => "0.8",
     "Test::Perl::Critic" => 0,
     "Test::Pod::Content" => 0,
     "namespace::autoclean" => 0,

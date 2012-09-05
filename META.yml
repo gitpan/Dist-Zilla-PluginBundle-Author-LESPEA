@@ -101,7 +101,6 @@ requires:
   Pod::Weaver::Section::Support: 0
   Pod::Weaver::Section::WarrantyDisclaimer: 0
   Test::CPAN::Meta: 0
-  Test::EOL: 0.8
   Test::Perl::Critic: 0
   Test::Pod::Content: 0
   namespace::autoclean: 0
@@ -113,7 +112,7 @@ resources:
   bugtracker: https://rt.cpan.org/Public/Dist/Display.html?Name=Dist-Zilla-PluginBundle-Author-LESPEA
   homepage: http://search.cpan.org/dist/Dist-Zilla-PluginBundle-Author-LESPEA
   repository: git://github.com/lespea/dist-zilla-pluginbundle-author-lespea.git
-version: 1.005000
+version: 1.005001
 x_Dist_Zilla:
   plugins:
     -
@@ -180,10 +179,6 @@ x_Dist_Zilla:
       class: Dist::Zilla::Plugin::Test::DistManifest
       name: '@Author::LESPEA/@Filter/Test::DistManifest'
       version: 2.000002
-    -
-      class: Dist::Zilla::Plugin::EOLTests
-      name: '@Author::LESPEA/@Filter/EOLTests'
-      version: 0.02
     -
       class: Dist::Zilla::Plugin::HasVersionTests
       name: '@Author::LESPEA/@Filter/HasVersionTests'
@@ -299,19 +294,19 @@ x_Dist_Zilla:
     -
       class: Dist::Zilla::Plugin::Git::Check
       name: Git::Check
-      version: 1.121820
+      version: 1.122460
     -
       class: Dist::Zilla::Plugin::Git::Commit
       name: Commit_Changes
-      version: 1.121820
+      version: 1.122460
     -
       class: Dist::Zilla::Plugin::Git::Tag
       name: Git::Tag
-      version: 1.121820
+      version: 1.122460
     -
       class: Dist::Zilla::Plugin::Git::Push
       name: Git::Push
-      version: 1.121820
+      version: 1.122460
     -
       class: Dist::Zilla::Plugin::ModuleShareDirs
       name: ModuleShareDirs

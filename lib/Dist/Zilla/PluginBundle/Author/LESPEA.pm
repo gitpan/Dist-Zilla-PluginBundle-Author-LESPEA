@@ -4,7 +4,7 @@ use utf8;
 
 package Dist::Zilla::PluginBundle::Author::LESPEA;
 {
-  $Dist::Zilla::PluginBundle::Author::LESPEA::VERSION = '1.005000';
+  $Dist::Zilla::PluginBundle::Author::LESPEA::VERSION = '1.005001';
 }
 BEGIN {
   $Dist::Zilla::PluginBundle::Author::LESPEA::AUTHORITY = 'cpan:LESPEA';
@@ -191,7 +191,7 @@ sub _add_static {
         'ConsistentVersionTest',
         'Test::Perl::Critic',
         'Test::DistManifest',
-        'EOLTests',
+        #'EOLTests',
         'HasVersionTests',
         #'Test::Kwalitee',
         'MetaTests',
@@ -304,7 +304,7 @@ Dist::Zilla::PluginBundle::Author::LESPEA - LESPEA's Dist::Zilla Configuration
 
 =head1 VERSION
 
-version 1.005000
+version 1.005001
 
 =head1 SYNOPSIS
 
@@ -323,7 +323,6 @@ This plugin bundle, in its default configuration, is equivalent to:
     [ConsistentVersionTest]
     [CopyFilesFromBuild]
     [DualBuilders]
-    [EOLTests]
     [ExecDir]
     [ExtraTests]
     [FakeRelease]
@@ -509,10 +508,6 @@ L<Dist::Zilla::Plugin::DualBuilders|Dist::Zilla::Plugin::DualBuilders>
 
 =item *
 
-L<Dist::Zilla::Plugin::EOLTests|Dist::Zilla::Plugin::EOLTests>
-
-=item *
-
 L<Dist::Zilla::Plugin::ExecDir|Dist::Zilla::Plugin::ExecDir>
 
 =item *
@@ -582,10 +577,6 @@ L<Dist::Zilla::Plugin::ModuleBuild|Dist::Zilla::Plugin::ModuleBuild>
 =item *
 
 L<Dist::Zilla::Plugin::NextRelease|Dist::Zilla::Plugin::NextRelease>
-
-=item *
-
-L<Dist::Zilla::Plugin::NoTabsTests|Dist::Zilla::Plugin::NoTabsTests>
 
 =item *
 

@@ -1,5 +1,9 @@
 Revision history for Dist-Zilla-PluginBundle-Author-LESPEA
 
+1.005001  2012-09-05 01:05:27 America/Chicago
+    [Bugfix]
+    *   EOL tests are horribly broken in windows
+
 1.005000  2012-08-31 15:55:48 America/Chicago
     [Enhancement]
     *   Remove Kwalitee & unusedvars since they're very buggy

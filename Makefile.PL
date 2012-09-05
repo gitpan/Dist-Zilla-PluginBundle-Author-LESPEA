@@ -101,7 +101,6 @@ my %WriteMakefileArgs = (
     "Pod::Weaver::Section::Support" => 0,
     "Pod::Weaver::Section::WarrantyDisclaimer" => 0,
     "Test::CPAN::Meta" => 0,
-    "Test::EOL" => "0.8",
     "Test::Perl::Critic" => 0,
     "Test::Pod::Content" => 0,
     "namespace::autoclean" => 0,
@@ -109,7 +108,7 @@ my %WriteMakefileArgs = (
     "utf8" => 0,
     "warnings" => 0
   },
-  "VERSION" => "1.005000",
+  "VERSION" => "1.005001",
   "test" => {
     "TESTS" => "t/*.t"
   }
