@@ -112,7 +112,7 @@ resources:
   bugtracker: https://rt.cpan.org/Public/Dist/Display.html?Name=Dist-Zilla-PluginBundle-Author-LESPEA
   homepage: http://search.cpan.org/dist/Dist-Zilla-PluginBundle-Author-LESPEA
   repository: git://github.com/lespea/dist-zilla-pluginbundle-author-lespea.git
-version: 1.005001
+version: 1.006000
 x_Dist_Zilla:
   plugins:
     -

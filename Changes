@@ -1,5 +1,9 @@
 Revision history for Dist-Zilla-PluginBundle-Author-LESPEA
 
+1.006000  2012-09-07 07:38:46 America/Chicago
+    [Enhancement]
+    *   Pod weaver bundle now collects constants via the 'const' keyword
+
 1.005001  2012-09-05 01:05:27 America/Chicago
     [Bugfix]
     *   EOL tests are horribly broken in windows

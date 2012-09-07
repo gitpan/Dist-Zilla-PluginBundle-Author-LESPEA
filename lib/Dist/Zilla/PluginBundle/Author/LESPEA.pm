@@ -4,7 +4,7 @@ use utf8;
 
 package Dist::Zilla::PluginBundle::Author::LESPEA;
 {
-  $Dist::Zilla::PluginBundle::Author::LESPEA::VERSION = '1.005001';
+  $Dist::Zilla::PluginBundle::Author::LESPEA::VERSION = '1.006000';
 }
 BEGIN {
   $Dist::Zilla::PluginBundle::Author::LESPEA::AUTHORITY = 'cpan:LESPEA';
@@ -304,7 +304,7 @@ Dist::Zilla::PluginBundle::Author::LESPEA - LESPEA's Dist::Zilla Configuration
 
 =head1 VERSION
 
-version 1.005001
+version 1.006000
 
 =head1 SYNOPSIS
 

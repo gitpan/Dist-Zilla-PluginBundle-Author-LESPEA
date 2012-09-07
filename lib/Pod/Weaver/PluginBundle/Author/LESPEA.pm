@@ -4,7 +4,7 @@ use utf8;
 
 package Pod::Weaver::PluginBundle::Author::LESPEA;
 {
-  $Pod::Weaver::PluginBundle::Author::LESPEA::VERSION = '1.005001';
+  $Pod::Weaver::PluginBundle::Author::LESPEA::VERSION = '1.006000';
 }
 BEGIN {
   $Pod::Weaver::PluginBundle::Author::LESPEA::AUTHORITY = 'cpan:LESPEA';
@@ -42,6 +42,7 @@ sub mvp_bundle_config {
         [ 'EXPORTS'                              , _exp('Generic')               , {} ]                            ,
 
         [ 'OPTIONS'                              , _exp('Collect')               , { command => 'option' } ]       ,
+        [ 'CONSTANTS'                            , _exp('Collect')               , { command => 'const'  } ]       ,
         [ 'ATTRIBUTES'                           , _exp('Collect')               , { command => 'attr' } ]         ,
         [ 'METHODS'                              , _exp('Collect')               , { command => 'method' } ]       ,
         [ 'FUNCTIONS'                            , _exp('Collect')               , { command => 'func' } ]         ,
@@ -83,7 +84,7 @@ Pod::Weaver::PluginBundle::Author::LESPEA - A bundle that implements LESPEA's pr
 
 =head1 VERSION
 
-version 1.005001
+version 1.006000
 
 =head1 SYNOPSIS
 
@@ -112,6 +113,9 @@ It is nearly equivalent to the following:
 
     [Collect / OPTIONS]
     command = option
+
+    [Collect / CONSTANTS]
+    command = const
 
     [Collect / ATTRIBUTES]
     command = attr

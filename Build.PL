@@ -22,7 +22,7 @@ my %module_build_args = (
     "Adam Lesperance <lespea\@gmail.com>"
   ],
   "dist_name" => "Dist-Zilla-PluginBundle-Author-LESPEA",
-  "dist_version" => "1.005001",
+  "dist_version" => "1.006000",
   "license" => "perl",
   "module_name" => "Dist::Zilla::PluginBundle::Author::LESPEA",
   "recommends" => {},
