@@ -3,9 +3,7 @@ use warnings;
 use utf8;
 
 package Dist::Zilla::PluginBundle::Author::LESPEA;
-{
-  $Dist::Zilla::PluginBundle::Author::LESPEA::VERSION = '1.006000';
-}
+$Dist::Zilla::PluginBundle::Author::LESPEA::VERSION = '1.007000';
 BEGIN {
   $Dist::Zilla::PluginBundle::Author::LESPEA::AUTHORITY = 'cpan:LESPEA';
 }
@@ -56,8 +54,8 @@ sub configure {
         archive_directory => 'releases',
 
         # Copy README.pod from build dir to dist dir, for Github and suchlike.
-        copy_file => [],
-        move_file => [],
+        #copy_file => [ ],
+        #move_file => [ ],
 
         # Add CPAN meta-info (adds git stuff too)
         add_meta => 1,
@@ -97,11 +95,12 @@ sub _add_variable {
     }
 
     # Copy files from build dir
+    my %copy_args;
+    $copy_args{copy} = $args{copy_file}  if  defined $args{copy_file};
+    $copy_args{move} = $args{move_file}  if  defined $args{move_file};
+
     $self->add_plugins(
-        [ 'CopyFilesFromBuild' => {
-            copy => ($args{copy_file} || [ q{} ]),
-            move => ($args{move_file} || [ q{} ]),
-        } ],
+        [ 'CopyFilesFromBuild' => \%copy_args],
     );
 
     # Choose release plugin
@@ -304,7 +303,7 @@ Dist::Zilla::PluginBundle::Author::LESPEA - LESPEA's Dist::Zilla Configuration
 
 =head1 VERSION
 
-version 1.006000
+version 1.007000
 
 =head1 SYNOPSIS
 
@@ -777,7 +776,7 @@ L<https://github.com/lespea/dist-zilla-pluginbundle-author-lespea>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2011 by Adam Lesperance.
+This software is copyright (c) 2014 by Adam Lesperance.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

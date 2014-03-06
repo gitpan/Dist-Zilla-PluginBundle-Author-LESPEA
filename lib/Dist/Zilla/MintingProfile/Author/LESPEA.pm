@@ -3,9 +3,7 @@ use warnings;
 use utf8;
 
 package Dist::Zilla::MintingProfile::Author::LESPEA;
-{
-  $Dist::Zilla::MintingProfile::Author::LESPEA::VERSION = '1.006000';
-}
+$Dist::Zilla::MintingProfile::Author::LESPEA::VERSION = '1.007000';
 BEGIN {
   $Dist::Zilla::MintingProfile::Author::LESPEA::AUTHORITY = 'cpan:LESPEA';
 }
@@ -35,7 +33,7 @@ Dist::Zilla::MintingProfile::Author::LESPEA - LESPEA's Minting Profile
 
 =head1 VERSION
 
-version 1.006000
+version 1.007000
 
 =head1 SYNOPSIS
 
@@ -77,7 +75,7 @@ Adam Lesperance <lespea@gmail.com>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2011 by Adam Lesperance.
+This software is copyright (c) 2014 by Adam Lesperance.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

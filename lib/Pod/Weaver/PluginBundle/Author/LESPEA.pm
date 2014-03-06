@@ -3,9 +3,7 @@ use warnings;
 use utf8;
 
 package Pod::Weaver::PluginBundle::Author::LESPEA;
-{
-  $Pod::Weaver::PluginBundle::Author::LESPEA::VERSION = '1.006000';
-}
+$Pod::Weaver::PluginBundle::Author::LESPEA::VERSION = '1.007000';
 BEGIN {
   $Pod::Weaver::PluginBundle::Author::LESPEA::AUTHORITY = 'cpan:LESPEA';
 }
@@ -84,7 +82,7 @@ Pod::Weaver::PluginBundle::Author::LESPEA - A bundle that implements LESPEA's pr
 
 =head1 VERSION
 
-version 1.006000
+version 1.007000
 
 =head1 SYNOPSIS
 
@@ -190,7 +188,7 @@ Adam Lesperance <lespea@gmail.com>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2011 by Adam Lesperance.
+This software is copyright (c) 2014 by Adam Lesperance.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
