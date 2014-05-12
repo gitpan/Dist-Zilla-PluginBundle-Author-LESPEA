@@ -5,7 +5,7 @@ NAME
 
 VERSION
 
-    version 1.007000
+    version 1.008000
 
 SYNOPSIS
 
@@ -55,7 +55,10 @@ DESCRIPTION
         [Test::CPAN::Changes]
         [Test::Compile]
         [Test::DistManifest]
+        [Test::EOL]
+        [Test::Kwalitee]
         [Test::MinimumVersion]
+        [Test::NoTabs]
         [Test::Perl::Critic]
         [TestRelease]
         [UploadToCPAN]
@@ -246,7 +249,13 @@ SEE ALSO
 
       * Dist::Zilla::Plugin::Test::DistManifest
 
+      * Dist::Zilla::Plugin::Test::EOL
+
+      * Dist::Zilla::Plugin::Test::Kwalitee
+
       * Dist::Zilla::Plugin::Test::MinimumVersion
+
+      * Dist::Zilla::Plugin::Test::NoTabs
 
       * Dist::Zilla::Plugin::Test::Perl::Critic
 

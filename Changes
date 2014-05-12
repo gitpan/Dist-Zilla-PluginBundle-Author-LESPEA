@@ -1,5 +1,10 @@
 Revision history for Dist-Zilla-PluginBundle-Author-LESPEA
 
+1.008000  2014-05-12 18:08:02-05:00 America/Chicago
+    [Enhancement]
+    *  Re-enable Kwalitee
+    *  Update eol & tabs deps
+
 1.007000  2014-03-06 14:43:21-06:00 America/Chicago
     [Enhancement]
     *  Improve the skeleton gitignore file

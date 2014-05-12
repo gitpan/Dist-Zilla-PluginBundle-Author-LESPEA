@@ -9,7 +9,7 @@ BEGIN {
 use strict;
 use warnings;
 
-# this test was generated with Dist::Zilla::Plugin::NoTabsTests 0.06
+# this test was generated with Dist::Zilla::Plugin::Test::NoTabs 0.08
 
 use Test::More 0.88;
 use Test::NoTabs;
@@ -17,7 +17,9 @@ use Test::NoTabs;
 my @files = (
     'lib/Dist/Zilla/MintingProfile/Author/LESPEA.pm',
     'lib/Dist/Zilla/PluginBundle/Author/LESPEA.pm',
-    'lib/Pod/Weaver/PluginBundle/Author/LESPEA.pm'
+    'lib/Pod/Weaver/PluginBundle/Author/LESPEA.pm',
+    't/00-compile.t',
+    't/000-report-versions-tiny.t'
 );
 
 notabs_ok($_) foreach @files;

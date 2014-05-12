@@ -3,7 +3,7 @@ use warnings;
 use utf8;
 
 package Dist::Zilla::PluginBundle::Author::LESPEA;
-$Dist::Zilla::PluginBundle::Author::LESPEA::VERSION = '1.007000';
+$Dist::Zilla::PluginBundle::Author::LESPEA::VERSION = '1.008000';
 BEGIN {
   $Dist::Zilla::PluginBundle::Author::LESPEA::AUTHORITY = 'cpan:LESPEA';
 }
@@ -190,12 +190,12 @@ sub _add_static {
         'ConsistentVersionTest',
         'Test::Perl::Critic',
         'Test::DistManifest',
-        #'EOLTests',
         'HasVersionTests',
-        #'Test::Kwalitee',
+        'Test::Kwalitee',
         'MetaTests',
         'Test::MinimumVersion',
-        'NoTabsTests',
+        'Test::NoTabs',
+        'Test::EOL',
         'PodCoverageTests',
         'PodSyntaxTests',
         'Test::Portability',
@@ -303,7 +303,7 @@ Dist::Zilla::PluginBundle::Author::LESPEA - LESPEA's Dist::Zilla Configuration
 
 =head1 VERSION
 
-version 1.007000
+version 1.008000
 
 =head1 SYNOPSIS
 
@@ -353,7 +353,10 @@ This plugin bundle, in its default configuration, is equivalent to:
     [Test::CPAN::Changes]
     [Test::Compile]
     [Test::DistManifest]
+    [Test::EOL]
+    [Test::Kwalitee]
     [Test::MinimumVersion]
+    [Test::NoTabs]
     [Test::Perl::Critic]
     [TestRelease]
     [UploadToCPAN]
@@ -627,7 +630,19 @@ L<Dist::Zilla::Plugin::Test::DistManifest|Dist::Zilla::Plugin::Test::DistManifes
 
 =item *
 
+L<Dist::Zilla::Plugin::Test::EOL|Dist::Zilla::Plugin::Test::EOL>
+
+=item *
+
+L<Dist::Zilla::Plugin::Test::Kwalitee|Dist::Zilla::Plugin::Test::Kwalitee>
+
+=item *
+
 L<Dist::Zilla::Plugin::Test::MinimumVersion|Dist::Zilla::Plugin::Test::MinimumVersion>
+
+=item *
+
+L<Dist::Zilla::Plugin::Test::NoTabs|Dist::Zilla::Plugin::Test::NoTabs>
 
 =item *
 
